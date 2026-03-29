@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#e2e2e2",
+              "on-tertiary-fixed": "#00440a",
+              "error-dim": "#d53d18",
+              "on-primary-container": "#005a10",
+              "error": "#ff7351",
+              "secondary-fixed-dim": "#d4d4d4",
+              "secondary-dim": "#d4d4d4",
+              "surface-container-low": "#131313",
+              "primary-fixed-dim": "#00ec3b",
+              "on-tertiary-fixed-variant": "#006513",
+              "secondary-fixed": "#e2e2e2",
+              "on-error": "#450900",
+              "on-error-container": "#ffd2c8",
+              "primary-container": "#00fc40",
+              "outline": "#757575",
+              "tertiary-fixed": "#00fc40",
+              "on-secondary": "#505252",
+              "inverse-on-surface": "#555555",
+              "on-primary-fixed-variant": "#006513",
+              "surface-container-lowest": "#000000",
+              "surface": "#0e0e0e",
+              "surface-container": "#191919",
+              "on-background": "#ffffff",
+              "inverse-primary": "#006f16",
+              "surface-tint": "#9cff93",
+              "on-secondary-container": "#d0d0d0",
+              "on-secondary-fixed": "#3e4040",
+              "surface-container-high": "#1f1f1f",
+              "error-container": "#b92902",
+              "on-tertiary-container": "#005a10",
+              "secondary-container": "#454747",
+              "surface-bright": "#2c2c2c",
+              "on-surface": "#ffffff",
+              "background": "#0e0e0e",
+              "primary": "#9cff93",
+              "tertiary": "#9cff93",
+              "surface-variant": "#262626",
+              "on-primary-fixed": "#00440a",
+              "surface-container-highest": "#262626",
+              "tertiary-fixed-dim": "#00ec3b",
+              "on-surface-variant": "#ababab",
+              "tertiary-container": "#00fc40",
+              "on-primary": "#006413",
+              "primary-fixed": "#00fc40",
+              "tertiary-dim": "#00ec3b",
+              "primary-dim": "#00ec3b",
+              "outline-variant": "#484848",
+              "on-tertiary": "#006413",
+              "surface-dim": "#0e0e0e",
+              "inverse-surface": "#f9f9f9",
+              "on-secondary-fixed-variant": "#5a5c5c"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-glow {
+            text-shadow: 0 0 10px rgba(156, 255, 147, 0.4);
+        }
+        .status-beacon-pulse {
+            box-shadow: 0 0 8px #9cff93;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-black">
+<!-- UI Header Overlay -->
+<div class="fixed top-0 left-0 w-full z-[110] bg-black border-b-2 border-primary py-1 flex justify-center items-center">
+<span class="text-[#00FF41] font-display font-black text-[10px] tracking-[0.4em] uppercase">
+            USER INTERFACE
+        </span>
+</div>
+<!-- New TopAppBar from COMPONENTS_47 -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-neutral-950 !top-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#9cff93] text-2xl" data-icon="terminal">terminal</span>
+<h1 class="text-2xl font-black tracking-tighter text-[#9cff93] font-['Space_Grotesk']">NEO_MONOLITH</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-neutral-900 text-[#9cff93] font-['Space_Grotesk'] tracking-tighter uppercase font-bold px-4 py-2 border border-[#9cff93]/30 hover:bg-[#9cff93] hover:text-black transition-all active:translate-x-1 active:translate-y-1">
+                ADMIN_MODE
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Daily Deployment Hero -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-0 mb-12 border-4 border-surface-container-highest">
+<div class="md:col-span-7 p-8 flex flex-col justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary text-on-primary px-2 py-0.5 text-[10px] font-black tracking-tighter uppercase">SYSTEM_PRIORITY_01</span>
+<span class="text-on-surface-variant text-[10px] font-medium tracking-widest uppercase">/ / DEPLOYMENT_CYCLE_24H</span>
+</div>
+<h2 class="text-6xl md:text-8xl font-black font-headline tracking-tighter uppercase leading-[0.9] mb-6">CLAUDE<br/>3.5_SONNET</h2>
+<p class="text-on-surface-variant text-lg max-w-md mb-8 leading-tight">High-fidelity intelligence synthesis. Optimized for complex architectural reasoning and recursive code deployment.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-black font-headline uppercase tracking-widest flex items-center gap-3 hover:bg-primary-dim active:translate-y-1 transition-none">
+                        INITIALIZE_CORE
+                        <span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 font-black font-headline uppercase tracking-widest hover:bg-primary hover:text-black transition-none">
+                        SPEC_SHEET
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative overflow-hidden bg-surface-container min-h-[400px]">
+<img alt="AI neural mesh" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 brightness-75 mix-blend-screen" data-alt="Abstract 3D render of a glowing green crystalline structure with fiber optic lines on a dark obsidian background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHSYME1D20iG9dOV2haHRfu4R1TQoRuJgI8P0lCUS3aJMoIRpcBDEFM_d9L9xKCO6MhZUhOyZjuJG5FHAreSyWK6VrhOTcIgB8gNPIxzqCXAC_qROIQ_LeUtKIV-ZTKbgW7vMHYMmGWad6LCPunDHGkEnmTd2c3zM1SfqYY8OftiAhA_b87-AR4AWotlPbP2K20NUtahO8rzI-uv5wdalUbsvB7E4pmVwkr51MVTGROWCGieenK8FlC6LV2mamsCXhzvQrfpVtoG8"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-transparent to-primary/10"></div>
+<div class="absolute bottom-6 right-6 text-right">
+<div class="text-[40px] font-black font-headline leading-none text-primary monolith-glow">99.8%</div>
+<div class="text-[10px] font-black font-headline tracking-widest uppercase text-on-surface">UPTIME_STABILITY</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Trending Systems -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Trending Card 01: Cursor -->
+<div class="bg-surface-container-low border-b-4 border-primary p-6 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-12">
+<div class="p-3 bg-surface-container-highest inline-block">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="terminal">terminal</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant tracking-tighter">ID: CRS_COMPOSER</span>
+</div>
+<h3 class="text-3xl font-black font-headline tracking-tighter uppercase mb-2">CURSOR_AI</h3>
+<div class="flex items-center gap-4 mb-4">
+<div class="flex-1 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">88% SYNC</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium mb-8">Integrated development environment with native neural reasoning for instant codebase mapping.</p>
+</div>
+<button class="w-full bg-surface-container-highest text-white py-4 font-black font-headline uppercase tracking-widest group-hover:bg-primary group-hover:text-black transition-none flex justify-center items-center gap-2">
+                    DEPLOY_INSTANCE
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Trending Card 02: Midjourney -->
+<div class="bg-surface-container-low border-b-4 border-primary p-6 flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-12">
+<div class="p-3 bg-surface-container-highest inline-block">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="palette">palette</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant tracking-tighter">ID: MJ_V6_PRO</span>
+</div>
+<h3 class="text-3xl font-black font-headline tracking-tighter uppercase mb-2">MIDJOURNEY</h3>
+<div class="flex items-center gap-4 mb-4">
+<div class="flex-1 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[94%]"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">94% SYNC</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium mb-8">Hyper-realistic latent space navigation for high-fidelity visual asset generation and architectural rendering.</p>
+</div>
+<button class="w-full bg-surface-container-highest text-white py-4 font-black font-headline uppercase tracking-widest group-hover:bg-primary group-hover:text-black transition-none flex justify-center items-center gap-2">
+                    DEPLOY_INSTANCE
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Stats/System Health Panel -->
+<div class="bg-surface-container-highest p-6 border-l-4 border-primary flex flex-col gap-6">
+<h4 class="text-xs font-black tracking-[0.2em] uppercase text-primary">GLOBAL_LATENCY_REPORT</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest">EU_WEST_NODE</span>
+<span class="font-headline font-bold text-xl">12MS</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest">US_EAST_CLUSTER</span>
+<span class="font-headline font-bold text-xl text-primary">08MS</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest">AS_PAC_BACKBONE</span>
+<span class="font-headline font-bold text-xl">42MS</span>
+</div>
+</div>
+<div class="mt-auto bg-surface-container-lowest p-4">
+<div class="text-[10px] font-black tracking-widest uppercase mb-2 text-on-surface-variant">THREAT_LEVEL</div>
+<div class="flex gap-1 h-4">
+<div class="flex-1 bg-primary"></div>
+<div class="flex-1 bg-primary"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+</div>
+<div class="mt-2 text-[10px] font-bold text-on-surface uppercase">NOMINAL_STATE</div>
+</div>
+</div>
+</div>
+<!-- System Architecture Visualization Section -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t-4 border-surface-container-highest pt-12">
+<div>
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase mb-6 leading-none">ARCHITECTURAL<br/>TRANSPARENCY</h2>
+<div class="space-y-6">
+<div class="flex gap-4 group cursor-crosshair">
+<div class="text-primary font-black font-headline text-2xl">01</div>
+<div>
+<h4 class="font-black uppercase tracking-widest text-sm mb-1">DECENTRALIZED_GPU_ORCHESTRATION</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Dynamic compute allocation across global nodes ensuring zero-latency inference for high-density neural tasks.</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-crosshair">
+<div class="text-primary font-black font-headline text-2xl">02</div>
+<div>
+<h4 class="font-black uppercase tracking-widest text-sm mb-1">REALTIME_WEIGHT_CALIBRATION</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Continuous tuning of model hyperparameters based on live feedback loops and execution telemetry.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-4 border-surface-container-highest p-4 relative aspect-video">
+<img alt="Server hardware close up" class="w-full h-full object-cover grayscale contrast-150" data-alt="Macro photography of dark computer circuit boards with neon green LED lights tracing high-tech pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF59fplcTLPQ1I9z3c-hLyT2CFzaKuZsQ-sNFY2t67FV8ngpOYbBUDfsBZibhKe55Wtlmhp48Yvs-V2SaA7KiZ9SBanBZ8ihhWYHpJjXdIZ4xb7tVokFXtnFMJQ2sEP2ieqR_OourK7lVXTo2ryXhMS8mqmmVHNK68uMaXRhZSHUgRaNVUtqKet1nkcE7Xs43FB83CoPqUTtx_4mZwTpIuJ6R_LBUhBJbmBlN7ZiGMC7rtnzOGVVaK9lnLizs1K4KxtoPg-koK3pM"/>
+<div class="absolute inset-0 border border-primary/30 pointer-events-none m-4"></div>
+<div class="absolute top-8 left-8 bg-black/80 backdrop-blur-md p-3 border border-primary/50">
+<div class="text-[8px] font-black text-primary tracking-[0.3em]">CORE_LOAD</div>
+<div class="text-xl font-headline font-black">44.02%</div>
+</div>
+</div>
+</section>
+</main>
+<!-- New BottomNavBar from COMPONENTS_47 -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-16 bg-neutral-950">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full w-full active:scale-100 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">CORE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] active:scale-100 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">NODES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] active:scale-100 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">VAULT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] active:scale-100 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">UPLINK</span>
+</a>
+</nav>
+<!-- Contextual FAB -->
+<button class="fixed bottom-24 right-6 bg-primary text-on-primary w-16 h-16 flex items-center justify-center shadow-[4px_4px_0px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-none z-40">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

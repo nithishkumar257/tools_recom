@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO_MONOLITH | ADMIN_MODE ENTRY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #fef4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .terminal-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(156, 255, 147, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(156, 255, 147, 0.05) 1px, transparent 1px);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(156, 255, 147, 0.5);
+        }
+        .hard-shadow {
+            box-shadow: 8px 8px 0px 0px #000000;
+        }
+        .active-glitch:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #000000;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-fixed": "#00fc40",
+                "primary-fixed-dim": "#00ec3b",
+                "surface-container-low": "#f8eeee",
+                "on-secondary-fixed": "#3e4040",
+                "tertiary": "#006b15",
+                "tertiary-container": "#00fc40",
+                "primary-fixed": "#00fc40",
+                "on-tertiary-fixed-variant": "#006513",
+                "surface": "#fef4f4",
+                "on-tertiary": "#d1ffc6",
+                "surface-container-highest": "#e5dadb",
+                "on-primary": "#d1ffc6",
+                "inverse-on-surface": "#a39b9b",
+                "primary": "#006b15",
+                "surface-tint": "#006b15",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#322e2e",
+                "inverse-primary": "#00fc40",
+                "error": "#b02500",
+                "surface-variant": "#e5dadb",
+                "inverse-surface": "#110d0e",
+                "outline-variant": "#b3abab",
+                "primary-container": "#00fc40",
+                "outline": "#7c7575",
+                "on-secondary": "#f2f3f3",
+                "surface-bright": "#fef4f4",
+                "surface-container": "#f0e6e6",
+                "on-background": "#322e2e",
+                "secondary": "#5a5c5c",
+                "on-primary-container": "#005a10",
+                "on-primary-fixed-variant": "#006513",
+                "surface-container-high": "#eae0e0",
+                "tertiary-dim": "#005d11",
+                "surface-dim": "#ddd2d2",
+                "secondary-fixed-dim": "#d4d4d4",
+                "on-error-container": "#520c00",
+                "secondary-dim": "#4e5050",
+                "on-surface-variant": "#605a5a",
+                "error-dim": "#b92902",
+                "error-container": "#f95630",
+                "secondary-container": "#e2e2e2",
+                "on-error": "#ffefec",
+                "on-tertiary-container": "#005a10",
+                "background": "#fef4f4",
+                "on-secondary-container": "#505252",
+                "on-primary-fixed": "#00440a",
+                "tertiary-fixed-dim": "#00ec3b",
+                "secondary-fixed": "#e2e2e2",
+                "on-tertiary-fixed": "#00440a",
+                "primary-dim": "#005d11",
+                "on-secondary-fixed-variant": "#5a5c5c"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0e0e0e] font-body">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-neutral-950">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="terminal">terminal</span>
+<h1 class="text-2xl font-black tracking-tighter text-[#9cff93] font-['Space_Grotesk'] uppercase">NEO_MONOLITH</h1>
+</div>
+<div class="hidden md:flex items-center gap-8 h-full">
+<a class="text-[#9cff93] border-b-4 border-[#9cff93] font-['Space_Grotesk'] tracking-tighter uppercase font-bold px-4 h-full flex items-center" href="#">CORE</a>
+<a class="text-neutral-500 font-['Space_Grotesk'] tracking-tighter uppercase font-bold hover:bg-[#9cff93] hover:text-black duration-0 px-4 h-full flex items-center" href="#">NODES</a>
+<a class="text-neutral-500 font-['Space_Grotesk'] tracking-tighter uppercase font-bold hover:bg-[#9cff93] hover:text-black duration-0 px-4 h-full flex items-center" href="#">VAULT</a>
+</div>
+<button class="bg-neutral-900 text-[#9cff93] px-6 py-2 font-['Space_Grotesk'] font-bold uppercase tracking-widest text-sm hover:bg-[#9cff93] hover:text-black duration-0">
+            ADMIN_MODE
+        </button>
+</header>
+<main class="min-h-screen pt-20 pb-16 terminal-grid flex flex-col items-center justify-center px-4 relative">
+<!-- Background Ambient Decor -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute top-1/4 left-10 text-[10rem] font-black text-neutral-800 tracking-tighter leading-none select-none">SYSTEM_OVERRIDE</div>
+<div class="absolute bottom-1/4 right-10 text-[10rem] font-black text-neutral-800 tracking-tighter leading-none select-none">SECURE_VAULT</div>
+</div>
+<!-- Main Interface Container -->
+<div class="w-full max-w-4xl z-10">
+<div class="flex flex-col lg:flex-row gap-0 bg-[#000000] border-4 border-neutral-900 hard-shadow">
+<!-- Left Column: Terminal Output -->
+<div class="flex-1 p-8 border-b-4 lg:border-b-0 lg:border-r-4 border-neutral-900 bg-[#0a0a0a]">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-2 h-2 bg-[#9cff93] shadow-[0_0_8px_#9cff93]"></div>
+<span class="text-[#9cff93] font-mono text-xs uppercase tracking-[0.2em] font-bold">System Status: Active</span>
+</div>
+<h2 class="font-headline text-5xl md:text-6xl font-black text-white leading-none tracking-tighter mb-8 uppercase">
+                        Accessing <span class="text-[#9cff93]">Monolith Engine</span>
+</h2>
+<div class="space-y-4 font-mono text-sm text-neutral-500">
+<div class="flex gap-4">
+<span class="text-neutral-700">08:42:11</span>
+<span class="text-white">INITIATING_SEQUENCE...</span>
+</div>
+<div class="flex gap-4">
+<span class="text-neutral-700">08:42:12</span>
+<span>VERIFYING_ENCRYPTED_KERNELS... <span class="text-[#9cff93]">[OK]</span></span>
+</div>
+<div class="flex gap-4">
+<span class="text-neutral-700">08:42:14</span>
+<span>MAPPING_NODAL_PERIPHERALS... <span class="text-[#9cff93]">[READY]</span></span>
+</div>
+<div class="flex gap-4">
+<span class="text-neutral-700">08:42:15</span>
+<span class="animate-pulse">AWAITING_MODE_SELECTION_</span>
+</div>
+</div>
+<div class="mt-12 h-40 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-150" data-alt="Abstract digital visualization of cascading green data streams on a dark background in a matrix terminal style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKe8M0MFhvJvKKSWZV6OcETMajoCiDsZ-U_puHg4jPsAu2TMGolMvIsd5NXxwC330WwyS-x8Yhv1TN4e25oW9tJaUhFv4ldKcAY2Ma8Vt0_JZBg16q8Xxvo8QyQQ3KCVtSxui9wkEahh0TTx1lQ8aj0HqJR_6o8b3qRJ9bwk33Cj6dFq9_D7DrOni5fK6LdxVg149dovFw01aVIYxLGOMJzmnCocMeuFie3y29Jgd5HpTTMH3zDQAGAJjPqKuX2TPK4ji1T6nOz4g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+</div>
+</div>
+<!-- Right Column: Controls -->
+<div class="w-full lg:w-96 flex flex-col">
+<!-- High Visibility Toggle / Primary Choice -->
+<div class="flex-1 p-8 flex flex-col justify-between space-y-8 bg-[#111111]">
+<div>
+<p class="text-xs text-neutral-400 font-bold uppercase tracking-widest mb-6">Select Operational Mode</p>
+<button class="w-full bg-[#9cff93] text-black font-headline font-black text-xl py-6 px-4 text-left flex items-center justify-between group active-glitch transition-all">
+<span>SWITCH TO ADMIN_MODE</span>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<p class="text-[10px] text-neutral-500 mt-4 leading-relaxed font-mono">
+                                WARNING: Admin mode grants full read/write permissions to core monolith services. All actions are logged and immutable.
+                            </p>
+</div>
+<div class="space-y-4">
+<button class="w-full border-2 border-neutral-700 text-neutral-300 font-headline font-bold text-lg py-5 px-4 text-left flex items-center justify-between hover:bg-neutral-800 hover:text-white transition-all">
+<span>PUBLIC_INTERFACE</span>
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex-1 h-[2px] bg-neutral-800"></div>
+<span class="text-[10px] text-neutral-600 font-bold uppercase tracking-widest">OR</span>
+<div class="flex-1 h-[2px] bg-neutral-800"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-neutral-900 border border-neutral-800">
+<span class="block text-[10px] text-neutral-500 font-bold uppercase mb-1">UPTIME</span>
+<span class="text-white font-mono font-bold">99.998%</span>
+</div>
+<div class="p-4 bg-neutral-900 border border-neutral-800">
+<span class="block text-[10px] text-neutral-500 font-bold uppercase mb-1">LATENCY</span>
+<span class="text-[#9cff93] font-mono font-bold">14MS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer segment of the card -->
+<div class="p-8 bg-black border-t-4 border-neutral-900 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] text-neutral-500 font-bold uppercase">Authorized_User</span>
+<span class="text-white text-xs font-mono">ROOT_SUPER_USER</span>
+</div>
+<span class="material-symbols-outlined text-neutral-500" data-icon="fingerprint">fingerprint</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Elements -->
+<div class="mt-12 text-center text-neutral-600 font-mono text-xs uppercase tracking-[0.4em] max-w-md">
+            The system is operating under restricted protocols. Unauthorized access is strictly prohibited under sector code 9-B.
+        </div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-16 bg-neutral-950 md:hidden">
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] duration-0" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">CORE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] duration-0" href="#">
+<span class="material-symbols-outlined" data-icon="Account_tree">account_tree</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">NODES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 h-full w-full hover:bg-neutral-800 hover:text-[#9cff93] duration-0" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">VAULT</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full w-full" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest mt-1">UPLINK</span>
+</a>
+</nav>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

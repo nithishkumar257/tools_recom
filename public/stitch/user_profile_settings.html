@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO_MONOLITH | USER_PROFILE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#00fc40",
+              "error": "#b02500",
+              "tertiary-fixed": "#00fc40",
+              "surface": "#fef4f4",
+              "secondary-fixed-dim": "#d4d4d4",
+              "on-tertiary-fixed-variant": "#006513",
+              "on-error-container": "#520c00",
+              "on-background": "#322e2e",
+              "background": "#fef4f4",
+              "on-primary-fixed-variant": "#006513",
+              "on-primary-fixed": "#00440a",
+              "on-secondary": "#f2f3f3",
+              "on-tertiary": "#d1ffc6",
+              "primary-fixed": "#00fc40",
+              "surface-variant": "#e5dadb",
+              "secondary": "#5a5c5c",
+              "surface-container-low": "#f8eeee",
+              "error-dim": "#b92902",
+              "inverse-on-surface": "#a39b9b",
+              "surface-container-highest": "#e5dadb",
+              "on-error": "#ffefec",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "surface-dim": "#ddd2d2",
+              "surface-tint": "#006b15",
+              "on-secondary-container": "#505252",
+              "secondary-dim": "#4e5050",
+              "on-tertiary-container": "#005a10",
+              "tertiary-container": "#00fc40",
+              "outline": "#7c7575",
+              "tertiary": "#006b15",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#3e4040",
+              "tertiary-dim": "#005d11",
+              "primary-dim": "#005d11",
+              "error-container": "#f95630",
+              "on-surface": "#322e2e",
+              "on-primary-container": "#005a10",
+              "on-surface-variant": "#605a5a",
+              "surface-bright": "#fef4f4",
+              "on-primary": "#d1ffc6",
+              "primary-fixed-dim": "#00ec3b",
+              "primary": "#006b15",
+              "secondary-container": "#e2e2e2",
+              "outline-variant": "#b3abab",
+              "on-tertiary-fixed": "#00440a",
+              "inverse-primary": "#00fc40",
+              "surface-container-high": "#eae0e0",
+              "inverse-surface": "#110d0e",
+              "tertiary-fixed-dim": "#00ec3b",
+              "secondary-fixed": "#e2e2e2",
+              "surface-container": "#f0e6e6"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .monolith-border { border-bottom: 3px solid transparent; transition: border-color 0s; }
+        .monolith-border:focus-within { border-bottom-color: #9cff93; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 rounded-none border-0 bg-stone-950 dark:bg-black flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="terminal">terminal</span>
+<h1 class="font-space-grotesk font-black text-2xl text-[#9cff93] tracking-[-0.05em] uppercase">NEO_MONOLITH</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-stone-500 hover:bg-[#9cff93] hover:text-black px-4 h-full flex items-center transition-none" href="#">DISCOVERY</a>
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-stone-500 hover:bg-[#9cff93] hover:text-black px-4 h-full flex items-center transition-none" href="#">STACKS</a>
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-[#9cff93] border-b-4 border-[#9cff93] px-4 h-full flex items-center transition-none" href="#">PROFILE</a>
+</div>
+<button class="font-space-grotesk font-bold tracking-tighter uppercase text-[#9cff93] bg-stone-900 px-4 py-2 hover:bg-[#9cff93] hover:text-black transition-none active:translate-x-1 active:translate-y-1">
+            ADMIN_MODE
+        </button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Identity Card -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-lowest p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container opacity-10 blur-3xl group-hover:opacity-30 transition-opacity"></div>
+<div class="relative z-10">
+<div class="w-32 h-32 bg-surface-container-highest mb-6 relative">
+<img alt="Profile" class="w-full h-full object-cover grayscale contrast-125" data-alt="High contrast black and white portrait of a tech professional in a dark room with subtle neon green lighting accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACElwMqHJPlv4jNRtHcFWv5CMZBhKFWx5AjANYzPqTJ_wyXj-pOldnS2hsQvRf90-Y_PSrwpe4EBO-2atXWK8uRj2Re8-E9-y_pfNhgR8wAHrvjh35ZxoI8aA4PbBJfkUycAI1WU55dGljH3pu_lUNmVrFT3oQJVN0S59dc8URv6g51DgLUrAOoMAjQVqiUHPsVGIVT3nKFENySlrleu9K0-u8hBsZAxelBDxUSssC0RVeDxv9u0Ojd3gWjB9HXOnL6eTCHAVQKhU"/>
+<div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#9cff93] flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-sm" data-icon="edit">edit</span>
+</div>
+</div>
+<h2 class="font-headline text-4xl font-black tracking-tight leading-none mb-1">USER_0X7F</h2>
+<p class="font-headline text-sm text-primary font-bold tracking-widest uppercase mb-6">PREMIUM_NODE</p>
+<div class="space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Uptime</span>
+<span class="text-xs font-bold font-headline">99.98%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Credits</span>
+<span class="text-xs font-bold font-headline text-primary">12,450_NEO</span>
+</div>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<button class="flex items-center gap-4 p-4 bg-primary-container text-black font-headline font-bold uppercase tracking-tighter text-left">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    CORE_PREFERENCES
+                </button>
+<button class="flex items-center gap-4 p-4 bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline font-bold uppercase tracking-tighter text-left transition-none">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                    SECURITY_LOCK
+                </button>
+<button class="flex items-center gap-4 p-4 bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline font-bold uppercase tracking-tighter text-left transition-none">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    DATA_FEEDS
+                </button>
+</nav>
+</aside>
+<!-- Right Column: Settings Matrix -->
+<section class="lg:col-span-8 space-y-12">
+<!-- Global Configuration Section -->
+<div class="space-y-8">
+<header class="flex items-end gap-4">
+<h3 class="font-headline text-5xl font-black tracking-tighter leading-none">CONFIG_STATE</h3>
+<div class="h-2 w-2 bg-primary-container mb-2 shadow-[0_0_8px_#00fc40]"></div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Budget Mode -->
+<div class="bg-surface-container-low p-6 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="payments">payments</span>
+<h4 class="font-headline font-bold uppercase tracking-widest text-xs">Budget_Mode</h4>
+</div>
+<div class="flex flex-col gap-2">
+<label class="flex items-center justify-between p-3 bg-surface-container-lowest cursor-pointer group hover:bg-stone-100 transition-none">
+<span class="text-sm font-bold uppercase tracking-tight">FREE_ONLY</span>
+<input class="hidden peer" name="budget" type="radio"/>
+<div class="w-5 h-5 border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container"></div>
+</label>
+<label class="flex items-center justify-between p-3 bg-surface-container-lowest cursor-pointer group hover:bg-stone-100 transition-none">
+<span class="text-sm font-bold uppercase tracking-tight">MIXED_CONTENT</span>
+<input checked="" class="hidden peer" name="budget" type="radio"/>
+<div class="w-5 h-5 border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container"></div>
+</label>
+<label class="flex items-center justify-between p-3 bg-surface-container-lowest cursor-pointer group hover:bg-stone-100 transition-none">
+<span class="text-sm font-bold uppercase tracking-tight">PREMIUM_ONLY</span>
+<input class="hidden peer" name="budget" type="radio"/>
+<div class="w-5 h-5 border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Default Skill Level -->
+<div class="bg-surface-container-low p-6 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="psychology">psychology</span>
+<h4 class="font-headline font-bold uppercase tracking-widest text-xs">Skill_Threshold</h4>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<button class="w-full text-left p-4 bg-surface-container-lowest border-l-4 border-transparent hover:border-primary transition-none font-bold text-sm uppercase">BEGINNER_MODE</button>
+<button class="w-full text-left p-4 bg-primary text-on-primary border-l-4 border-black transition-none font-bold text-sm uppercase">INTERMEDIATE_MODE</button>
+<button class="w-full text-left p-4 bg-surface-container-lowest border-l-4 border-transparent hover:border-primary transition-none font-bold text-sm uppercase">EXPERT_MODE</button>
+</div>
+</div>
+</div>
+<!-- Preferred Tech Stack -->
+<div class="bg-surface-container-lowest p-8 space-y-6">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="code">code</span>
+<h4 class="font-headline font-bold uppercase tracking-widest text-xs">TECH_STACK_PRIORITY</h4>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Select_Primary</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="px-8 py-4 bg-surface-container-high peer-checked:bg-[#9cff93] peer-checked:text-black font-headline font-black text-xl transition-none active:scale-95">JS</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="px-8 py-4 bg-surface-container-high peer-checked:bg-[#9cff93] peer-checked:text-black font-headline font-black text-xl transition-none active:scale-95">PYTHON</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="px-8 py-4 bg-surface-container-high peer-checked:bg-[#9cff93] peer-checked:text-black font-headline font-black text-xl transition-none active:scale-95">RUST</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="px-8 py-4 bg-surface-container-high peer-checked:bg-[#9cff93] peer-checked:text-black font-headline font-black text-xl transition-none active:scale-95">GO</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Personalized Feed Section -->
+<div class="space-y-8">
+<header class="flex items-end gap-4">
+<h3 class="font-headline text-5xl font-black tracking-tighter leading-none uppercase">Feed_Logic</h3>
+<div class="h-2 w-2 bg-primary-container mb-2"></div>
+</header>
+<div class="bg-surface-container-low p-1 gap-1 grid grid-cols-1">
+<!-- Toggle 1 -->
+<div class="bg-surface-container-lowest p-6 flex justify-between items-center">
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-lg leading-none">ALGORITHMIC_BIAS</p>
+<p class="text-xs text-on-surface-variant mt-1">Prioritize high-engagement clusters over chronological sequence.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-surface-container-highest peer-focus:outline-none peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-1 after:left-1 after:bg-on-surface-variant peer-checked:after:bg-black after:h-5 after:w-6 after:transition-all peer-checked:bg-[#9cff93]"></div>
+</label>
+</div>
+<!-- Toggle 2 -->
+<div class="bg-surface-container-lowest p-6 flex justify-between items-center">
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-lg leading-none">NEURAL_DRAFTING</p>
+<p class="text-xs text-on-surface-variant mt-1">Enable real-time AI content generation for empty feed states.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-surface-container-highest peer-focus:outline-none peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-1 after:left-1 after:bg-on-surface-variant peer-checked:after:bg-black after:h-5 after:w-6 after:transition-all peer-checked:bg-[#9cff93]"></div>
+</label>
+</div>
+<!-- Toggle 3 -->
+<div class="bg-surface-container-lowest p-6 flex justify-between items-center">
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-lg leading-none">VOID_MODE</p>
+<p class="text-xs text-on-surface-variant mt-1">Hide all metrics and social indicators for focused ingestion.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-surface-container-highest peer-focus:outline-none peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-1 after:left-1 after:bg-on-surface-variant peer-checked:after:bg-black after:h-5 after:w-6 after:transition-all peer-checked:bg-[#9cff93]"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="pt-8 flex justify-end gap-4">
+<button class="px-8 py-4 font-headline font-bold uppercase tracking-widest text-xs border-2 border-primary text-primary hover:bg-primary-container hover:text-black transition-none">RESET_CONFIG</button>
+<button class="px-12 py-4 font-headline font-black uppercase tracking-widest text-sm bg-primary-container text-black shadow-[4px_4px_0px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-none">SYNC_CHANGES</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 flex justify-around items-stretch pb-safe bg-stone-950 dark:bg-black z-50 shadow-[0_-4px_0_0_#1a1a1a]">
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 font-space-grotesk text-[10px] font-bold tracking-widest uppercase hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+            DISCOVERY
+        </a>
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 font-space-grotesk text-[10px] font-bold tracking-widest uppercase hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="layers">layers</span>
+            STACKS
+        </a>
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full px-4 font-space-grotesk text-[10px] font-bold tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+            PROFILE
+        </a>
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 font-space-grotesk text-[10px] font-bold tracking-widest uppercase hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bookmark">bookmark</span>
+            SAVED
+        </a>
+</nav>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

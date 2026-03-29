@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#006b15",
+              "surface-dim": "#ddd2d2",
+              "on-background": "#322e2e",
+              "tertiary-dim": "#005d11",
+              "on-secondary": "#f2f3f3",
+              "surface-container-low": "#f8eeee",
+              "surface-container-high": "#eae0e0",
+              "error-container": "#f95630",
+              "on-secondary-container": "#505252",
+              "tertiary-container": "#00fc40",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "tertiary-fixed-dim": "#00ec3b",
+              "primary-dim": "#005d11",
+              "error-dim": "#b92902",
+              "on-primary": "#d1ffc6",
+              "outline-variant": "#b3abab",
+              "secondary-fixed-dim": "#d4d4d4",
+              "on-error-container": "#520c00",
+              "secondary-container": "#e2e2e2",
+              "on-primary-fixed-variant": "#006513",
+              "primary-fixed": "#00fc40",
+              "on-secondary-fixed": "#3e4040",
+              "on-tertiary-container": "#005a10",
+              "surface": "#fef4f4",
+              "on-primary-container": "#005a10",
+              "inverse-surface": "#110d0e",
+              "surface-bright": "#fef4f4",
+              "inverse-on-surface": "#a39b9b",
+              "surface-tint": "#006b15",
+              "error": "#b02500",
+              "background": "#fef4f4",
+              "primary-fixed-dim": "#00ec3b",
+              "on-surface": "#322e2e",
+              "on-primary-fixed": "#00440a",
+              "outline": "#7c7575",
+              "on-surface-variant": "#605a5a",
+              "surface-container": "#f0e6e6",
+              "tertiary-fixed": "#00fc40",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#d1ffc6",
+              "secondary-fixed": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#006513",
+              "secondary-dim": "#4e5050",
+              "secondary": "#5a5c5c",
+              "on-tertiary-fixed": "#00440a",
+              "primary-container": "#00fc40",
+              "tertiary": "#006b15",
+              "surface-container-highest": "#e5dadb",
+              "inverse-primary": "#00fc40",
+              "surface-variant": "#e5dadb",
+              "on-error": "#ffefec"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-grid {
+            background-image: radial-gradient(circle, #262626 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .status-beacon {
+            box-shadow: 0 0 8px #9cff93;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e0e] text-[#9cff93] font-['Space_Grotesk'] uppercase tracking-tighter fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 border-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl" data-icon="terminal">terminal</span>
+<h1 class="text-2xl font-bold text-[#9cff93] tracking-[-0.05em]">SYSTEM_MONITOR_v1.0</h1>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex gap-6">
+<a class="text-[#9cff93] border-b-4 border-[#9cff93] py-2" href="#">ANALYTICS</a>
+<a class="text-white opacity-50 hover:bg-[#9cff93] hover:text-black transition-none py-2 px-2" href="#">NODES</a>
+<a class="text-white opacity-50 hover:bg-[#9cff93] hover:text-black transition-none py-2 px-2" href="#">REPORTS</a>
+</nav>
+<span class="material-symbols-outlined text-2xl cursor-pointer" data-icon="settings_input_component">settings_input_component</span>
+</div>
+</header>
+<!-- NavigationDrawer (Sidebar) -->
+<aside class="bg-[#000000] fixed left-0 top-0 h-full w-64 z-40 flex flex-col pt-24 border-none hidden md:flex">
+<div class="px-6 mb-8">
+<h2 class="text-[#9cff93] font-black font-['Space_Grotesk'] uppercase text-xs tracking-widest">ADMIN_CONSOLE</h2>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="bg-[#9cff93] text-black font-black flex items-center px-6 py-4 font-['Space_Grotesk'] text-sm uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="hub">hub</span>
+                CORE_NODES
+            </a>
+<a class="text-white hover:bg-[#262626] hover:text-[#9cff93] flex items-center px-6 py-4 font-['Space_Grotesk'] text-sm uppercase transition-none" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="list_alt">list_alt</span>
+                LOG_STREAM
+            </a>
+<a class="text-white hover:bg-[#262626] hover:text-[#9cff93] flex items-center px-6 py-4 font-['Space_Grotesk'] text-sm uppercase transition-none" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="psychology">psychology</span>
+                AI_LOGIC
+            </a>
+<a class="text-white hover:bg-[#262626] hover:text-[#9cff93] flex items-center px-6 py-4 font-['Space_Grotesk'] text-sm uppercase transition-none" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings_remote">settings_remote</span>
+                MANUAL_OVERRIDE
+            </a>
+</nav>
+<div class="p-6 bg-[#1a1a1a]">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+<span class="text-[10px] font-bold tracking-tighter opacity-70 uppercase">Uptime: 432:12:08</span>
+</div>
+<div class="w-full bg-[#333] h-1">
+<div class="bg-[#9cff93] h-full w-[88%]"></div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-24 px-6 pb-24 brutalist-grid min-h-screen">
+<!-- Hero Header -->
+<section class="mb-12">
+<p class="text-[#9cff93] font-['Space_Grotesk'] text-xs font-bold uppercase tracking-[0.3em] mb-2">Real-Time Operations</p>
+<h2 class="text-6xl md:text-8xl font-['Space_Grotesk'] font-black uppercase tracking-tighter leading-none text-white">SYSTEM<br/>ANALYTICS</h2>
+</section>
+<!-- Bento Grid Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Global Throughput -->
+<div class="md:col-span-8 bg-[#1a1a1a] p-8 flex flex-col justify-between relative group overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="text-[#9cff93] font-['Space_Grotesk'] font-bold text-xl uppercase italic">Global Throughput</h3>
+<p class="text-xs opacity-50 uppercase font-bold tracking-widest">Active Requests / Sec</p>
+</div>
+<button class="bg-[#9cff93] text-black px-4 py-2 text-xs font-black uppercase hover:bg-white transition-none active:translate-x-0.5 active:translate-y-0.5">MANUAL TUNE</button>
+</div>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="text-8xl font-black font-['Space_Grotesk'] tracking-tighter">14.2<span class="text-2xl text-[#9cff93]">TB/s</span></span>
+<span class="text-[#9cff93] font-bold text-sm">+2.4% CRITICAL OFFSET</span>
+</div>
+</div>
+<!-- Abstract Data Viz Placeholder -->
+<div class="h-32 flex items-end gap-1">
+<div class="bg-[#262626] w-full h-[40%]"></div>
+<div class="bg-[#262626] w-full h-[60%]"></div>
+<div class="bg-[#9cff93] w-full h-[85%]"></div>
+<div class="bg-[#262626] w-full h-[55%]"></div>
+<div class="bg-[#262626] w-full h-[30%]"></div>
+<div class="bg-[#9cff93] w-full h-[95%]"></div>
+<div class="bg-[#262626] w-full h-[45%]"></div>
+<div class="bg-[#262626] w-full h-[70%]"></div>
+<div class="bg-[#9cff93] w-full h-[80%]"></div>
+<div class="bg-[#262626] w-full h-[50%]"></div>
+</div>
+</div>
+<!-- Inference Latency -->
+<div class="md:col-span-4 bg-[#262626] p-8 flex flex-col justify-between border-none">
+<div>
+<h3 class="text-white font-['Space_Grotesk'] font-bold text-xl uppercase mb-6">Inference Latency</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-xs uppercase font-bold opacity-50">Mean</span>
+<span class="text-2xl font-black">12ms</span>
+</div>
+<div class="w-full bg-[#000] h-4">
+<div class="bg-[#9cff93] h-full w-[12%]"></div>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs uppercase font-bold opacity-50">P99 Peak</span>
+<span class="text-2xl font-black text-[#9cff93]">44ms</span>
+</div>
+<div class="w-full bg-[#000] h-4">
+<div class="bg-red-600 h-full w-[44%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full border-2 border-[#9cff93] text-[#9cff93] py-4 text-sm font-black uppercase hover:bg-[#9cff93] hover:text-black transition-none mt-8">MANUAL TUNE</button>
+</div>
+<!-- Sync Accuracy -->
+<div class="md:col-span-4 bg-[#000000] p-8 flex flex-col">
+<h3 class="text-[#9cff93] font-['Space_Grotesk'] font-bold text-xl uppercase mb-2">Sync Accuracy</h3>
+<p class="text-xs opacity-50 uppercase mb-8">Inter-node consistency rating</p>
+<div class="flex-1 flex items-center justify-center relative">
+<div class="w-48 h-48 border-8 border-[#1a1a1a] rounded-full flex items-center justify-center">
+<div class="text-center">
+<span class="text-5xl font-black block">99.8</span>
+<span class="text-xs font-bold uppercase text-[#9cff93]">Optimal</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-[#9cff93] text-black py-4 text-sm font-black uppercase mt-8 hover:bg-white transition-none">MANUAL TUNE</button>
+</div>
+<!-- System Logs (High Density) -->
+<div class="md:col-span-8 bg-[#1a1a1a] p-0 flex flex-col h-[400px]">
+<div class="p-6 bg-[#262626] flex justify-between items-center">
+<h3 class="font-['Space_Grotesk'] font-bold text-sm uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="list_alt">list_alt</span>
+                        System Logs (Live)
+                    </h3>
+<span class="text-[10px] font-mono opacity-50">STATUS: INTERCEPTING...</span>
+</div>
+<div class="flex-1 overflow-y-auto p-6 font-mono text-[11px] space-y-2 text-[#9cff93]">
+<p><span class="opacity-30">[14:22:01]</span> <span class="text-white">NODE_04</span> ACCESS GRANTED. SYNCING CORE_LOGIC...</p>
+<p><span class="opacity-30">[14:22:04]</span> <span class="text-white">LATENCY_WATCHDOG</span> ALERT: P99 JITTER DETECTED IN SECTOR 7G.</p>
+<p><span class="opacity-30">[14:22:10]</span> <span class="text-[#9cff93] font-bold">MANUAL_OVERRIDE</span> RECEIVED: TICKET #X882 - ADJUSTING BUFFER.</p>
+<p><span class="opacity-30">[14:22:15]</span> <span class="text-white">NODE_02</span> REBOOT SUCCESSFUL. VERSION 1.0.4 LOADED.</p>
+<p><span class="opacity-30">[14:22:18]</span> <span class="text-white">CORE_TEMP</span> WARNING: RADIATOR EFFICIENCY AT 82%.</p>
+<p><span class="opacity-30">[14:22:22]</span> <span class="text-white">SYNC_DAEMON</span> RE-ALIGNING GLOBAL CLOCK...</p>
+<p><span class="opacity-30">[14:22:29]</span> <span class="text-[#9cff93]">SUCCESS</span> SYNC COMPLETED FOR 244 ACTIVE NODES.</p>
+</div>
+</div>
+<!-- Active Nodes Detail Card -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-[#262626] p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-black flex items-center justify-center">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="dns">dns</span>
+</div>
+<div>
+<p class="text-[10px] font-bold opacity-50 uppercase">Primary Node</p>
+<p class="font-bold">HK_CLUSTER_A1</p>
+</div>
+</div>
+<div class="bg-[#262626] p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-black flex items-center justify-center">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="memory">memory</span>
+</div>
+<div>
+<p class="text-[10px] font-bold opacity-50 uppercase">Memory Load</p>
+<p class="font-bold">42.8 GB / 128 GB</p>
+</div>
+</div>
+<div class="bg-[#262626] p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-black flex items-center justify-center">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="speed">speed</span>
+</div>
+<div>
+<p class="text-[10px] font-bold opacity-50 uppercase">Clock Speed</p>
+<p class="font-bold">5.4 GHz</p>
+</div>
+</div>
+<div class="bg-[#262626] p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-black flex items-center justify-center">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="cloud_done">cloud_done</span>
+</div>
+<div>
+<p class="text-[10px] font-bold opacity-50 uppercase">Sync Status</p>
+<p class="font-bold text-[#9cff93]">VERIFIED</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Visual Slab -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative h-[300px] overflow-hidden bg-black group">
+<img alt="Server room with neon green lights" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="dramatic server room with neon green cables and hardware blinking in the dark of a high-tech data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI3if8AeJGMJFAqq6GjZ17W3QDV3dgm5Qh2ru0sn6shCP75PkEFnBV7qLQltLfDp7scNaRQqJoBiFx0cuCPJuDCazfjNZulRC8j8PjvgJ73H3xUoqTmX3RE4RWO8urwqUL98R19KbGQsPV9vQEPz5e11SWhsqZ0M0mmaQQCWp-Qu0DH1-fO5GH4TO_RvSzs23ZFKz873XKsvIt73hIY33FbGkrf2mssKv_Sm01jxY1iDl8v-73tOrnCj_65p3SIZrYXVwhMcnXG5k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-3xl font-black font-['Space_Grotesk'] uppercase leading-none">PHYSICAL<br/>LAYER_01</h4>
+<p class="text-xs font-bold uppercase mt-2 text-[#9cff93]">Data Center: North_Spine</p>
+</div>
+</div>
+<div class="relative h-[300px] overflow-hidden bg-black group">
+<img alt="Abstract digital blockchain visualization" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="abstract architectural 3D rendering of glowing green data points and geometric lines in a dark digital void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6FKmM7ChCvqQsXXiIyGWzyTaO2I7m5O377r73QYNuFyOOyWTGOb2yxW_vA1JJRxP4ijPNIPnLo1Lqb9eR_3me82UWmEuMr9gTtowp6gDAH1YcLN2VOTHMcHT0ZI2oRzv0vbe7pS_srcJow71wq1n5wNd0wPWRApWON4LPPOjA3sIFIJ_idekaOGuTecF7O0MmKni6rpqSGxGP3lcP7g4B0EwNQ6-8JcIO7hC7hN1qoRzx0cY8vgbCxESP4Sktk6q-OvZ6KW7kbWk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-3xl font-black font-['Space_Grotesk'] uppercase leading-none">LOGIC<br/>MAP_V4</h4>
+<p class="text-xs font-bold uppercase mt-2 text-[#9cff93]">AI Processing Core</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#0e0e0e] h-16 border-t-4 border-[#262626]">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black w-full h-full transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[10px] font-black tracking-widest uppercase">AI_AUTONOMOUS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white w-full h-full opacity-40 hover:opacity-100 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="back_hand">back_hand</span>
+<span class="font-['Inter'] text-[10px] font-black tracking-widest uppercase">MANUAL_CONTROL</span>
+</a>
+</nav>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

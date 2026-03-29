@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#9cff93",
+              "on-tertiary-container": "#005a10",
+              "inverse-on-surface": "#555555",
+              "tertiary-fixed-dim": "#00ec3b",
+              "primary-fixed-dim": "#00ec3b",
+              "on-tertiary": "#006413",
+              "primary-container": "#00fc40",
+              "tertiary-fixed": "#00fc40",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "surface-container-high": "#1f1f1f",
+              "surface-variant": "#262626",
+              "secondary": "#e2e2e2",
+              "on-tertiary-fixed": "#00440a",
+              "error": "#ff7351",
+              "on-primary-fixed": "#00440a",
+              "primary-dim": "#00ec3b",
+              "on-tertiary-fixed-variant": "#006513",
+              "surface-bright": "#2c2c2c",
+              "surface-tint": "#9cff93",
+              "outline": "#757575",
+              "surface-container-low": "#131313",
+              "background": "#0e0e0e",
+              "on-secondary-fixed": "#3e4040",
+              "error-dim": "#d53d18",
+              "on-primary-container": "#005a10",
+              "surface-dim": "#0e0e0e",
+              "surface-container-highest": "#262626",
+              "primary-fixed": "#00fc40",
+              "inverse-primary": "#006f16",
+              "secondary-dim": "#d4d4d4",
+              "on-secondary": "#505252",
+              "on-error-container": "#ffd2c8",
+              "secondary-fixed-dim": "#d4d4d4",
+              "inverse-surface": "#f9f9f9",
+              "surface": "#0e0e0e",
+              "on-surface-variant": "#ababab",
+              "on-error": "#450900",
+              "secondary-container": "#454747",
+              "surface-container": "#191919",
+              "tertiary-container": "#00fc40",
+              "primary": "#9cff93",
+              "on-primary-fixed-variant": "#006513",
+              "on-surface": "#ffffff",
+              "outline-variant": "#484848",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#00ec3b",
+              "secondary-fixed": "#e2e2e2",
+              "surface-container-lowest": "#000000",
+              "on-primary": "#006413",
+              "error-container": "#b92902"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-grid {
+            background-image: linear-gradient(#1f1f1f 1px, transparent 1px), linear-gradient(90deg, #1f1f1f 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e0e] text-[#9cff93] font-['Space_Grotesk'] uppercase tracking-tighter font-bold rounded-none w-full top-0 sticky z-[100] shadow-[4px_4px_0px_0px_#000000] border-b border-[#262626]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+<h1 class="text-4xl font-black text-[#9cff93] tracking-tighter">AI BRUTAL</h1>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-white hover:bg-[#262626] transition-none p-2 active:translate-x-1 active:translate-y-1">
+<span class="material-symbols-outlined">monitoring</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pb-32 brutalist-grid">
+<!-- Comparison Header Section -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="flex flex-col md:flex-row gap-1 border-4 border-black shadow-[8px_8px_0px_0px_#000000] bg-black">
+<!-- Tool A -->
+<div class="flex-1 bg-surface-container-low p-8 relative">
+<div class="absolute top-0 left-0 bg-primary text-black px-3 py-1 font-headline font-bold text-xs">MODEL_01</div>
+<h2 class="font-headline font-black text-6xl text-white mt-4">CLAUDE 3.5</h2>
+<p class="font-label text-primary mt-2 tracking-widest text-sm">ANTHROPIC // SONNET</p>
+<div class="mt-8">
+<img class="w-full h-48 object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-300 border-2 border-primary/20" data-alt="abstract digital entity representation with geometric patterns and neon green highlights on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLX1LdVcbdzI2g-YtwxwdfOZAbv0QTrRv_XDO-dr9PpDtufPDYM2mP2TcLMyqZRxnfiPkcTVfJeDESYM4BZN2pFv1SA74p3F9wBmrb999qNAwu3cyP8bTOJ437r5a2XO0FT0GaXqa5XrttwTOcdVU2LDt6Hm9F4e_Hemt1ajSM2gO1zvM_n9u_0vGpabdmftGO85yNdTMYVAf606VF26UGOKHR2t-H8yrQVqq2M4JP3Sp-NpHR7_yeno5UchbXimyujbtiC8PkTXQ"/>
+</div>
+</div>
+<!-- VS Divider -->
+<div class="w-full md:w-20 bg-primary flex items-center justify-center py-4 md:py-0">
+<span class="font-headline font-black text-4xl text-black">VS</span>
+</div>
+<!-- Tool B -->
+<div class="flex-1 bg-surface-container-low p-8 relative">
+<div class="absolute top-0 right-0 bg-white text-black px-3 py-1 font-headline font-bold text-xs">MODEL_02</div>
+<h2 class="font-headline font-black text-6xl text-white mt-4 text-right">GPT-4O</h2>
+<p class="font-label text-white/60 mt-2 tracking-widest text-sm text-right">OPENAI // OMNI</p>
+<div class="mt-8">
+<img class="w-full h-48 object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-300 border-2 border-white/20" data-alt="Futuristic robotic neural network visualization with sharp lines and high contrast black and white aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzwDTwWPDPtvj17cIZmw47w5QLjBfddn-kwrBDWK4qUiGQUhTF48Ub2pwFDmX92jUqR_pL72PKN_bW8hYCNvzhUBbxZ1YV4W48WRE9XojC6EQiGHcHR2iZj5yJ_7PGafFavr7vcl1EpQy1xzG5D1LKmKoysQXWWfITGA4aiGZJmKUAYJ5PEr6eYKJbkDhqUf137r5gcUkHmCMyxXdtm2zd87NRUMqi4ZGIbLXYfULvaxcFPlvQIT728dbetHXeWZn0eZETLMFEBu4"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Metrics Matrix -->
+<section class="max-w-7xl mx-auto px-6 mb-12">
+<div class="bg-surface-container-lowest border-4 border-black shadow-[8px_8px_0px_0px_#000000]">
+<!-- Table Header -->
+<div class="grid grid-cols-4 bg-surface-container-highest border-b-4 border-black p-4">
+<div class="col-span-1 font-headline font-bold text-primary tracking-widest">METRIC_TYPE</div>
+<div class="col-span-1 font-headline font-bold text-white text-center">CLAUDE 3.5</div>
+<div class="col-span-1 flex justify-center">
+<span class="material-symbols-outlined text-white/20">compare_arrows</span>
+</div>
+<div class="col-span-1 font-headline font-bold text-white text-right">GPT-4O</div>
+</div>
+<!-- Performance Row -->
+<div class="grid grid-cols-4 p-6 border-b border-white/10 items-center">
+<div class="col-span-1">
+<span class="font-headline font-bold text-2xl">PERFORMANCE</span>
+<p class="text-[10px] text-white/40 uppercase">Benchmark Aggregated</p>
+</div>
+<div class="col-span-1 text-center">
+<span class="text-4xl font-black text-primary">94.2</span>
+</div>
+<div class="col-span-1 flex justify-center px-4">
+<div class="w-full h-2 bg-surface-container-highest">
+<div class="h-full bg-primary" style="width: 94%;"></div>
+</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="text-4xl font-black text-white">92.8</span>
+</div>
+</div>
+<!-- Value Row -->
+<div class="grid grid-cols-4 p-6 border-b border-white/10 items-center bg-surface-container-low">
+<div class="col-span-1">
+<span class="font-headline font-bold text-2xl">VALUE</span>
+<p class="text-[10px] text-white/40 uppercase">Tokens per USD</p>
+</div>
+<div class="col-span-1 text-center">
+<span class="text-4xl font-black text-white/60">HIGH</span>
+</div>
+<div class="col-span-1 flex justify-center px-4">
+<div class="w-full h-1 bg-white/10"></div>
+</div>
+<div class="col-span-1 text-right">
+<span class="text-4xl font-black text-primary">ELITE</span>
+</div>
+</div>
+<!-- Popularity Row -->
+<div class="grid grid-cols-4 p-6 border-b border-white/10 items-center">
+<div class="col-span-1">
+<span class="font-headline font-bold text-2xl">POPULARITY</span>
+<p class="text-[10px] text-white/40 uppercase">Dev Adoption Rate</p>
+</div>
+<div class="col-span-1 text-center">
+<span class="text-4xl font-black text-white">88%</span>
+</div>
+<div class="col-span-1 flex justify-center px-4">
+<div class="w-full h-2 bg-surface-container-highest flex">
+<div class="h-full bg-white/40" style="width: 88%;"></div>
+<div class="h-full bg-primary" style="width: 7%;"></div>
+</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="text-4xl font-black text-primary">95%</span>
+</div>
+</div>
+<!-- Innovation Row -->
+<div class="grid grid-cols-4 p-6 items-center bg-surface-container-low">
+<div class="col-span-1">
+<span class="font-headline font-bold text-2xl">INNOVATION</span>
+<p class="text-[10px] text-white/40 uppercase">Architectural Edge</p>
+</div>
+<div class="col-span-1 text-center">
+<span class="text-4xl font-black text-primary">TIER 1</span>
+</div>
+<div class="col-span-1 flex justify-center px-4">
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="text-4xl font-black text-white">TIER 1</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Verdict Section -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Claude Verdict -->
+<div class="bg-primary p-1 shadow-[8px_8px_0px_0px_#000000]">
+<div class="bg-black p-8 h-full">
+<h3 class="font-headline font-black text-4xl text-primary leading-none mb-4">BEST FOR<br/>CREATIVE LOGIC</h3>
+<p class="text-white/80 font-body leading-relaxed mb-6">
+                        Claude 3.5 Sonnet exhibits superior nuance in code generation and long-form narrative structure. Ideal for complex multi-step reasoning where context retention is critical.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/20 text-primary px-3 py-1 text-xs font-bold uppercase tracking-widest border border-primary/30">Reasoning</span>
+<span class="bg-primary/20 text-primary px-3 py-1 text-xs font-bold uppercase tracking-widest border border-primary/30">Coding</span>
+<span class="bg-primary/20 text-primary px-3 py-1 text-xs font-bold uppercase tracking-widest border border-primary/30">Context</span>
+</div>
+</div>
+</div>
+<!-- GPT Verdict -->
+<div class="bg-white p-1 shadow-[8px_8px_0px_0px_#000000]">
+<div class="bg-black p-8 h-full">
+<h3 class="font-headline font-black text-4xl text-white leading-none mb-4">BEST FOR<br/>MULTIMODAL SPEED</h3>
+<p class="text-white/80 font-body leading-relaxed mb-6">
+                        GPT-4o dominates in real-time latency and multimodal integration. Its ability to process voice, vision, and text simultaneously makes it the ultimate production-grade utility.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/10 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white/20">Latency</span>
+<span class="bg-white/10 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white/20">Vision</span>
+<span class="bg-white/10 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest border border-white/20">API Scale</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#000000] rounded-none">
+<div class="flex-1 flex flex-col items-center justify-center text-white/60 p-2 hover:bg-[#262626] transition-none cursor-pointer">
+<span class="material-symbols-outlined mb-1">category</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">BROWSE</span>
+</div>
+<!-- ACTIVE: COMPARE -->
+<div class="flex-1 flex flex-col items-center justify-center bg-[#9cff93] text-black p-2 rounded-none transition-none cursor-pointer active:bg-[#00fc40]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">compare_arrows</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">COMPARE</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center text-white/60 p-2 hover:bg-[#262626] transition-none cursor-pointer">
+<span class="material-symbols-outlined mb-1">query_stats</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">TRENDS</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center text-white/60 p-2 hover:bg-[#262626] transition-none cursor-pointer">
+<span class="material-symbols-outlined mb-1">memory</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest">STATUS</span>
+</div>
+</nav>
+<!-- Floating Action Button - Not relevant for this detailed comparison screen, suppressed per guidelines -->
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

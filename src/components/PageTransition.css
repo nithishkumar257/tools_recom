@@ -1,0 +1,79 @@
+/* ========================================
+   PAGE TRANSITIONS
+   ======================================== */
+
+.page-transition {
+  will-change: opacity, transform;
+}
+
+.page-transition--enter {
+  animation: pageEnter 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-transition--exit {
+  animation: pageExit 0.2s cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+/* Smooth scroll-linked transitions for nav links */
+.page-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.page-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--purple);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-link:hover::after,
+.page-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.page-link.active {
+  color: var(--purple);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .page-transition--enter,
+  .page-transition--exit,
+  .page-link::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

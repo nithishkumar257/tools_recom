@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#00fc40",
+                        "error": "#b02500",
+                        "tertiary-fixed": "#00fc40",
+                        "surface": "#fef4f4",
+                        "secondary-fixed-dim": "#d4d4d4",
+                        "on-tertiary-fixed-variant": "#006513",
+                        "on-error-container": "#520c00",
+                        "on-background": "#322e2e",
+                        "background": "#fef4f4",
+                        "on-primary-fixed-variant": "#006513",
+                        "on-primary-fixed": "#00440a",
+                        "on-secondary": "#f2f3f3",
+                        "on-tertiary": "#d1ffc6",
+                        "primary-fixed": "#00fc40",
+                        "surface-variant": "#e5dadb",
+                        "secondary": "#5a5c5c",
+                        "surface-container-low": "#f8eeee",
+                        "error-dim": "#b92902",
+                        "inverse-on-surface": "#a39b9b",
+                        "surface-container-highest": "#e5dadb",
+                        "on-error": "#ffefec",
+                        "on-secondary-fixed-variant": "#5a5c5c",
+                        "surface-dim": "#ddd2d2",
+                        "surface-tint": "#006b15",
+                        "on-secondary-container": "#505252",
+                        "secondary-dim": "#4e5050",
+                        "on-tertiary-container": "#005a10",
+                        "tertiary-container": "#00fc40",
+                        "outline": "#7c7575",
+                        "tertiary": "#006b15",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#3e4040",
+                        "tertiary-dim": "#005d11",
+                        "primary-dim": "#005d11",
+                        "error-container": "#f95630",
+                        "on-surface": "#322e2e",
+                        "on-primary-container": "#005a10",
+                        "on-surface-variant": "#605a5a",
+                        "surface-bright": "#fef4f4",
+                        "on-primary": "#d1ffc6",
+                        "primary-fixed-dim": "#00ec3b",
+                        "primary": "#006b15",
+                        "secondary-container": "#e2e2e2",
+                        "outline-variant": "#b3abab",
+                        "on-tertiary-fixed": "#00440a",
+                        "inverse-primary": "#00fc40",
+                        "surface-container-high": "#eae0e0",
+                        "inverse-surface": "#110d0e",
+                        "tertiary-fixed-dim": "#00ec3b",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container": "#f0e6e6"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #fef4f4;
+            font-family: 'Inter', sans-serif;
+        }
+        .monolith-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1px;
+            background-color: #262626;
+        }
+        .monolith-cell {
+            background-color: #0e0e0e;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 rounded-none border-0 bg-stone-950 dark:bg-black h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="terminal">terminal</span>
+<h1 class="font-space-grotesk font-black text-2xl text-[#9cff93] tracking-[-0.05em] uppercase">NEO_MONOLITH</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-[#9cff93] border-b-4 border-[#9cff93] h-full flex items-center px-2 transition-none" href="#">DISCOVERY</a>
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-stone-500 hover:bg-[#9cff93] hover:text-black h-full flex items-center px-2 transition-none" href="#">STACKS</a>
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-stone-500 hover:bg-[#9cff93] hover:text-black h-full flex items-center px-2 transition-none" href="#">SEARCH</a>
+<a class="font-space-grotesk font-bold tracking-tighter uppercase text-stone-500 hover:bg-[#9cff93] hover:text-black h-full flex items-center px-2 transition-none" href="#">SAVED</a>
+</div>
+<button class="bg-[#9cff93] text-black px-4 py-1 font-space-grotesk font-bold tracking-tighter uppercase text-sm hover:translate-x-1 hover:translate-y-1 transition-all active:translate-x-0 active:translate-y-0">
+            ADMIN_MODE
+        </button>
+</header>
+<main class="pt-24 pb-32 max-w-7xl mx-auto px-6">
+<!-- Trending Conversations (Bento Layout) -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-2 h-8 bg-primary-fixed shadow-[0_0_15px_#9cff93]"></span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter uppercase">Trending_Conversations</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-surface-container-highest border border-surface-container-highest">
+<div class="md:col-span-2 p-8 bg-surface-container-lowest group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-primary px-3 py-1 text-on-primary font-label text-xs font-bold tracking-widest uppercase">Active_Now</span>
+<span class="text-on-surface-variant font-label text-xs">2.4k PARTICIPANTS</span>
+</div>
+<h3 class="font-headline text-5xl font-black tracking-tight leading-none mb-4 group-hover:text-primary transition-colors">THE_LLM_INFRASTRUCTURE_REVOLUTION</h3>
+<p class="text-on-surface-variant font-body text-lg max-w-2xl">Discussing the shift from monolithic architectures to agentic mesh networks. Live feedback on v4.2 implementation.</p>
+</div>
+<div class="flex flex-col gap-px bg-surface-container-highest">
+<div class="p-6 bg-surface-container-lowest flex-1 group cursor-pointer">
+<span class="text-primary font-bold text-xs uppercase mb-2 block tracking-widest">Hot_Topic</span>
+<h4 class="font-headline text-xl font-bold uppercase group-hover:text-primary transition-colors">Vector_Database_Benchmarking</h4>
+<p class="text-on-surface-variant text-sm mt-2 font-body">Pinecone vs Weaviate vs Milvus: The 2024 throughput report.</p>
+</div>
+<div class="p-6 bg-surface-container-lowest flex-1 group cursor-pointer">
+<span class="text-primary font-bold text-xs uppercase mb-2 block tracking-widest">New_Release</span>
+<h4 class="font-headline text-xl font-bold uppercase group-hover:text-primary transition-colors">Rust_Core_Refactoring</h4>
+<p class="text-on-surface-variant text-sm mt-2 font-body">Migrating critical legacy paths to memory-safe primitives.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Feed -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<span class="w-2 h-8 bg-primary-fixed shadow-[0_0_15px_#9cff93]"></span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter uppercase">Field_Reports</h2>
+</div>
+<div class="flex gap-1">
+<button class="bg-surface-container-highest p-3 text-on-surface hover:bg-primary hover:text-black transition-none">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="bg-surface-container-highest p-3 text-on-surface hover:bg-primary hover:text-black transition-none">
+<span class="material-symbols-outlined" data-icon="sort">sort</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-lowest border-l-8 border-primary-container p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="verified">verified</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter mb-1">CORTEX_ENGINE_V2</h3>
+<p class="text-primary font-bold text-sm">@SYSTEM_ARCHITECT_01</p>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 mb-6">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="tips_and_updates">tips_and_updates</span>
+<span class="font-label text-xs font-black uppercase tracking-widest">Usage_Tip</span>
+</div>
+<p class="text-on-surface font-body italic leading-relaxed">
+                            "Allocate at least 64GB of VRAM if you're running the full parameter mesh. The quantization fallback significantly degrades latency."
+                        </p>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span>
+<span class="font-label text-xs font-bold uppercase">128_VOTES</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-xs font-bold uppercase">14_COMMENTS</span>
+</button>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-lowest border-l-8 border-primary-container p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter mb-1">KINETIC_FLOW_SDK</h3>
+<p class="text-primary font-bold text-sm">@PROTO_TYPE_MOD</p>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 mb-6">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="tips_and_updates">tips_and_updates</span>
+<span class="font-label text-xs font-black uppercase tracking-widest">Usage_Tip</span>
+</div>
+<p class="text-on-surface font-body italic leading-relaxed">
+                            "Leverage the hot-reloading feature for real-time shader adjustments. Saves about 40% of the usual dev-cycle time."
+                        </p>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span>
+<span class="font-label text-xs font-bold uppercase">84_VOTES</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-xs font-bold uppercase">6_COMMENTS</span>
+</button>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface-container-lowest border-l-8 border-primary-container p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="database">database</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter mb-1">NEURAL_STASH_DB</h3>
+<p class="text-primary font-bold text-sm">@DATA_VOYAGER_99</p>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="material-symbols-outlined text-primary-fixed" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 mb-6">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="tips_and_updates">tips_and_updates</span>
+<span class="font-label text-xs font-black uppercase tracking-widest">Usage_Tip</span>
+</div>
+<p class="text-on-surface font-body italic leading-relaxed">
+                            "Avoid deep nesting in the document structure. It kills indexing speed. Keep it flat and use relations instead."
+                        </p>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span>
+<span class="font-label text-xs font-bold uppercase">212_VOTES</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-xs font-bold uppercase">41_COMMENTS</span>
+</button>
+</div>
+</div>
+<!-- Review Card 4 -->
+<div class="bg-surface-container-lowest border-l-8 border-primary-container p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="security">security</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter mb-1">VOID_SHIELD_PRO</h3>
+<p class="text-primary font-bold text-sm">@CRYPTO_PUNK_X</p>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 mb-6">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="tips_and_updates">tips_and_updates</span>
+<span class="font-label text-xs font-black uppercase tracking-widest">Usage_Tip</span>
+</div>
+<p class="text-on-surface font-body italic leading-relaxed">
+                            "The automatic firewall rules are aggressive. Whitelist your CI/CD runners before first deployment to prevent build lockout."
+                        </p>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span>
+<span class="font-label text-xs font-bold uppercase">56_VOTES</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-xs font-bold uppercase">2_COMMENTS</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 bg-stone-950 dark:bg-black flex justify-around items-stretch pb-safe z-50 shadow-[0_-4px_0_0_#1a1a1a]">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full px-4 flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-space-grotesk text-[10px] font-bold tracking-widest uppercase mt-1">DISCOVERY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 flex-1 hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-space-grotesk text-[10px] font-bold tracking-widest uppercase mt-1">STACKS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 flex-1 hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-space-grotesk text-[10px] font-bold tracking-widest uppercase mt-1">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 h-full px-4 flex-1 hover:bg-stone-800 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-space-grotesk text-[10px] font-bold tracking-widest uppercase mt-1">SAVED</span>
+</a>
+</nav>
+<!-- FAB for adding new report -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 bg-primary-container text-on-primary-container w-16 h-16 flex items-center justify-center shadow-[8px_8px_0px_0px_#000000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_#000000] transition-all">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

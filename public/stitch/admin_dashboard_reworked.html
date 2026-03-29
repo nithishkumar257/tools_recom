@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO_MONOLITH | SYSTEM_MONITOR_v1.0</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#006b15",
+              "surface-dim": "#ddd2d2",
+              "on-background": "#322e2e",
+              "tertiary-dim": "#005d11",
+              "on-secondary": "#f2f3f3",
+              "surface-container-low": "#f8eeee",
+              "surface-container-high": "#eae0e0",
+              "error-container": "#f95630",
+              "on-secondary-container": "#505252",
+              "tertiary-container": "#00fc40",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "tertiary-fixed-dim": "#00ec3b",
+              "primary-dim": "#005d11",
+              "error-dim": "#b92902",
+              "on-primary": "#d1ffc6",
+              "outline-variant": "#b3abab",
+              "secondary-fixed-dim": "#d4d4d4",
+              "on-error-container": "#520c00",
+              "secondary-container": "#e2e2e2",
+              "on-primary-fixed-variant": "#006513",
+              "primary-fixed": "#00fc40",
+              "on-secondary-fixed": "#3e4040",
+              "on-tertiary-container": "#005a10",
+              "surface": "#fef4f4",
+              "on-primary-container": "#005a10",
+              "inverse-surface": "#110d0e",
+              "surface-bright": "#fef4f4",
+              "inverse-on-surface": "#a39b9b",
+              "surface-tint": "#006b15",
+              "error": "#b02500",
+              "background": "#fef4f4",
+              "primary-fixed-dim": "#00ec3b",
+              "on-surface": "#322e2e",
+              "on-primary-fixed": "#00440a",
+              "outline": "#7c7575",
+              "on-surface-variant": "#605a5a",
+              "surface-container": "#f0e6e6",
+              "tertiary-fixed": "#00fc40",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#d1ffc6",
+              "secondary-fixed": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#006513",
+              "secondary-dim": "#4e5050",
+              "secondary": "#5a5c5c",
+              "on-tertiary-fixed": "#00440a",
+              "primary-container": "#00fc40",
+              "tertiary": "#006b15",
+              "surface-container-highest": "#e5dadb",
+              "inverse-primary": "#00fc40",
+              "surface-variant": "#e5dadb",
+              "on-error": "#ffefec"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .status-beacon {
+            box-shadow: 0 0 8px #00fc40;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #9cff93; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0e0e0e] text-white font-body selection:bg-[#9cff93] selection:text-black">
+<!-- TopAppBar -->
+<header class="bg-[#0e0e0e] text-[#9cff93] font-['Space_Grotesk'] uppercase tracking-tighter docked full-width top-0 border-none fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+<h1 class="text-2xl font-bold tracking-[-0.05em]">SYSTEM_MONITOR_v1.0</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-[#9cff93] border-b-4 border-[#9cff93] py-2 text-sm font-bold" href="#">CORE_NODES</a>
+<a class="text-white opacity-50 hover:bg-[#9cff93] hover:text-black transition-none py-2 text-sm font-bold" href="#">LOG_STREAM</a>
+<a class="text-white opacity-50 hover:bg-[#9cff93] hover:text-black transition-none py-2 text-sm font-bold" href="#">AI_LOGIC</a>
+</nav>
+<span class="material-symbols-outlined text-2xl cursor-pointer hover:bg-[#9cff93] hover:text-black p-2">settings_input_component</span>
+</div>
+</header>
+<!-- NavigationDrawer (Web Only) -->
+<aside class="hidden md:flex fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 bg-[#000000] z-40 flex-col border-r border-[#262626]">
+<div class="p-6">
+<h2 class="font-['Space_Grotesk'] text-sm font-black uppercase text-[#9cff93] mb-8">ADMIN_CONSOLE</h2>
+<nav class="flex flex-col gap-2">
+<a class="bg-[#9cff93] text-black font-black flex items-center px-4 py-3 gap-3" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Space_Grotesk'] text-sm font-bold uppercase">CORE_NODES</span>
+</a>
+<a class="text-white hover:text-[#9cff93] hover:bg-[#262626] transition-none flex items-center px-4 py-3 gap-3" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-['Space_Grotesk'] text-sm font-bold uppercase">LOG_STREAM</span>
+</a>
+<a class="text-white hover:text-[#9cff93] hover:bg-[#262626] transition-none flex items-center px-4 py-3 gap-3" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Space_Grotesk'] text-sm font-bold uppercase">AI_LOGIC</span>
+</a>
+<a class="text-white hover:text-[#9cff93] hover:bg-[#262626] transition-none flex items-center px-4 py-3 gap-3" href="#">
+<span class="material-symbols-outlined">settings_remote</span>
+<span class="font-['Space_Grotesk'] text-sm font-bold uppercase">MANUAL_OVERRIDE</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 bg-[#1a1a1a]">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+<span class="text-[10px] font-black tracking-widest uppercase">Orchestrator: Online</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 md:pl-64 pb-20 md:pb-0 min-h-screen bg-[#0e0e0e]">
+<div class="p-6 lg:p-10 max-w-8xl mx-auto space-y-10">
+<!-- Mode Switcher & Branding Header -->
+<section class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+<div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-white leading-none">NEO_MONOLITH</h2>
+<p class="font-body text-xs tracking-[0.3em] uppercase opacity-40 mt-2">Industrial Neural Utility / Ver 4.0.1</p>
+</div>
+<div class="flex bg-[#000000] p-1 w-full lg:w-auto">
+<button class="flex-1 lg:flex-none px-6 py-3 bg-[#9cff93] text-black font-black text-xs tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                        AI_AUTONOMOUS (ACTIVE)
+                    </button>
+<button class="flex-1 lg:flex-none px-6 py-3 text-white opacity-40 hover:opacity-100 font-black text-xs tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">back_hand</span>
+                        MANUAL_OVERRIDE
+                    </button>
+</div>
+</section>
+<!-- Bento Grid Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- System Health Nodes -->
+<div class="md:col-span-8 bg-[#1a1a1a] p-8 relative overflow-hidden">
+<div class="flex justify-between items-center mb-10">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tighter">System Health Nodes</h3>
+<span class="text-[10px] font-mono opacity-50">LATENCY: 0.04ms</span>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-[#000000] p-6 space-y-4 border-b-4 border-[#9cff93]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9cff93]">memory</span>
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+</div>
+<div>
+<p class="text-[10px] opacity-50 uppercase font-black">Memory_Core</p>
+<p class="text-2xl font-headline font-bold">98.2%</p>
+</div>
+</div>
+<div class="bg-[#000000] p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9cff93]">lan</span>
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+</div>
+<div>
+<p class="text-[10px] opacity-50 uppercase font-black">Logic_Mesh</p>
+<p class="text-2xl font-headline font-bold">STABLE</p>
+</div>
+</div>
+<div class="bg-[#000000] p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9cff93]">database</span>
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+</div>
+<div>
+<p class="text-[10px] opacity-50 uppercase font-black">Neural_Sync</p>
+<p class="text-2xl font-headline font-bold">14.0PB</p>
+</div>
+</div>
+<div class="bg-[#000000] p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-[#9cff93]">shield_with_heart</span>
+<div class="w-2 h-2 bg-[#9cff93] status-beacon"></div>
+</div>
+<div>
+<p class="text-[10px] opacity-50 uppercase font-black">Secure_Vault</p>
+<p class="text-2xl font-headline font-bold">LOCKED</p>
+</div>
+</div>
+</div>
+<!-- Node Density Map (Placeholder for Visual) -->
+<div class="mt-8 bg-[#000000] h-64 w-full relative group">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#9cff93 1px, transparent 1px); background-size: 20px 20px;"></div>
+<img class="w-full h-full object-cover opacity-60" data-alt="Stylized neon green digital map showing high density node clusters connected by glowing data lines on a black background" data-location="Global Neural Network" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWP6QznTy_sIVqE1958eka5Feib_sQSf3s4oob_FpNzGO1aVa6naujkria8jWhPt79qSdQDvDttORPkgM36SCyR7Ey-o1HprEOkCEvW8K9buQIsiLJrbSXLCQ5u-bQ7WHMGADyFw2iFwGLGa8pHVO1423Sx6WkLfqjGlvLZ9TdLKz0EkMx-JxQ009IHB2lKxUBNMy6g0k-ohELHXGNfEuf0TD6l8zKIzqV8A982k6tKJLqc_hAv0gC2NMS3pDLKpgcr2YyQ96preA"/>
+<div class="absolute bottom-4 left-4 bg-black px-3 py-1 text-[10px] font-black border border-[#9cff93]">NODE_DENSITY_MAP</div>
+</div>
+</div>
+<!-- Agent Execution Stream -->
+<div class="md:col-span-4 bg-[#262626] flex flex-col h-full">
+<div class="p-6 bg-[#000000] border-b border-[#262626]">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tighter flex items-center gap-2">
+<span class="material-symbols-outlined text-[#9cff93] text-sm">cycle</span>
+                            Agent Execution Stream
+                        </h3>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-4 bg-[#000000]">
+<!-- Log Item -->
+<div class="group cursor-crosshair">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="text-[#9cff93] font-bold">ORCHESTRATOR</span>
+<span class="opacity-30">12:04:11.02</span>
+</div>
+<div class="p-3 bg-[#1a1a1a] group-hover:bg-[#9cff93] group-hover:text-black transition-none border-l-2 border-[#9cff93]">
+<p class="text-xs font-mono">Routing sub-task [992-X] to Discovery Agent cluster.</p>
+</div>
+</div>
+<!-- Log Item -->
+<div class="group cursor-crosshair">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="text-white font-bold">DISCOVERY</span>
+<span class="opacity-30">12:04:10.88</span>
+</div>
+<div class="p-3 bg-[#1a1a1a] group-hover:bg-[#9cff93] group-hover:text-black transition-none border-l-2 border-white">
+<p class="text-xs font-mono">Scanned 4.2M vector embeddings. Identifying anomalies.</p>
+</div>
+</div>
+<!-- Log Item -->
+<div class="group cursor-crosshair">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="text-[#9cff93] font-bold">EVALUATION</span>
+<span class="opacity-30">12:04:10.45</span>
+</div>
+<div class="p-3 bg-[#1a1a1a] group-hover:bg-[#9cff93] group-hover:text-black transition-none border-l-2 border-[#9cff93]">
+<p class="text-xs font-mono">Confidence threshold 0.998. Approving execution node.</p>
+</div>
+</div>
+<!-- Log Item -->
+<div class="group cursor-crosshair">
+<div class="flex justify-between text-[10px] mb-1">
+<span class="text-white font-bold">SYSTEM</span>
+<span class="opacity-30">12:04:09.12</span>
+</div>
+<div class="p-3 bg-[#1a1a1a] group-hover:bg-[#9cff93] group-hover:text-black transition-none border-l-2 border-red-500">
+<p class="text-xs font-mono">User authentication bypassed via MANUAL_OVERRIDE_KEY.</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-[#9cff93] text-black font-black py-4 text-xs tracking-[0.2em] uppercase hover:bg-white transition-none">
+                        EXPAND_STREAM_DATA
+                    </button>
+</div>
+</div>
+<!-- Operational Insights Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="bg-[#1a1a1a] p-6 flex items-center justify-between group cursor-pointer hover:bg-[#262626] transition-none">
+<div>
+<p class="text-[10px] font-black opacity-40 uppercase mb-1">Throughput</p>
+<p class="text-3xl font-headline font-bold">128 GB/s</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-[#9cff93] opacity-20 group-hover:opacity-100">speed</span>
+</div>
+<div class="bg-[#1a1a1a] p-6 flex items-center justify-between group cursor-pointer hover:bg-[#262626] transition-none border-b-4 border-[#9cff93]">
+<div>
+<p class="text-[10px] font-black opacity-40 uppercase mb-1">Active Agents</p>
+<p class="text-3xl font-headline font-bold">4,112</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-[#9cff93] opacity-20 group-hover:opacity-100">groups</span>
+</div>
+<div class="bg-[#1a1a1a] p-6 flex items-center justify-between group cursor-pointer hover:bg-[#262626] transition-none">
+<div>
+<p class="text-[10px] font-black opacity-40 uppercase mb-1">Threat Level</p>
+<p class="text-3xl font-headline font-bold text-[#9cff93]">ZERO</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-[#9cff93] opacity-20 group-hover:opacity-100">verified_user</span>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#0e0e0e] h-16 border-t-4 border-[#262626]">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black w-full h-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-['Inter'] text-[10px] font-black tracking-widest uppercase mt-1">AI_AUTONOMOUS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white w-full h-full opacity-40" href="#">
+<span class="material-symbols-outlined">back_hand</span>
+<span class="font-['Inter'] text-[10px] font-black tracking-widest uppercase mt-1">MANUAL_CONTROL</span>
+</a>
+</nav>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

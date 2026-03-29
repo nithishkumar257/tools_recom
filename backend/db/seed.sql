@@ -1,0 +1,7 @@
+-- This file is intentionally dialect-neutral to avoid SQL-intellisense
+-- parser errors when non-PostgreSQL engines are active in the editor.
+--
+-- Canonical PostgreSQL seed:
+--   backend/db/seed.postgres.psql
+--
+-- Bootstrap script applies the PostgreSQL seed file directly.

@@ -1,0 +1,311 @@
+/* ========================================
+   COMPARISON PAGE - NEO-BRUTAL DESIGN
+   ======================================== */
+
+.comparison-page-neo {
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  padding: var(--spacing-2xl);
+  padding-top: calc(4rem + var(--spacing-2xl));
+  background: var(--color-bg);
+}
+
+.comparison-container-neo {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.comparison-header-neo {
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 4px solid var(--color-primary);
+}
+
+.comparison-title-neo {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  text-transform: uppercase;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.comparison-subtitle-neo {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.comparison-status {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.comparison-auth-notice {
+  margin-top: var(--spacing-md);
+  border: 2px solid var(--color-border-primary);
+  background: var(--color-surface-lowest);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.comparison-login-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.comparison-add-section,
+.comparison-table-container,
+.comparison-recommendation-box,
+.comparison-guide-section {
+  border: 4px solid var(--color-primary);
+  background: var(--color-surface-lowest);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.add-tools-title {
+  margin: 0 0 var(--spacing-md);
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.comparison-search-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--color-border-primary);
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.comparison-search-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary);
+}
+
+.comparison-tool-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.suggestion-btn {
+  border: 2px solid var(--color-border-primary);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  padding: 0.5rem 0.8rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.suggestion-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.suggestion-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.comparison-empty-state {
+  border: 2px dashed var(--color-primary);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.btn-primary-neo,
+.btn-choose-tool,
+.btn-back-builder {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.btn-primary-neo,
+.btn-choose-tool {
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-bg-darkest);
+}
+
+.btn-primary-neo:hover,
+.btn-choose-tool:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.btn-back-builder {
+  border: 2px solid var(--color-border-primary);
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.btn-back-builder:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.comparison-table-neo {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.comparison-table-neo th,
+.comparison-table-neo td {
+  border: 1px solid var(--color-border-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  vertical-align: top;
+}
+
+.comparison-table-neo thead th {
+  background: var(--color-bg);
+}
+
+.feature-column,
+.feature-name {
+  width: 180px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.tool-column {
+  min-width: 220px;
+}
+
+.tool-header-neo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-remove-tool {
+  border: 2px solid var(--color-border-primary);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.btn-remove-tool:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.accuracy-score {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.divider-row td {
+  background: var(--color-bg);
+  height: 6px;
+  padding: 0;
+}
+
+.pros-list,
+.cons-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pro-indicator {
+  color: #22c55e;
+  margin-right: 6px;
+}
+
+.con-indicator {
+  color: #ef4444;
+  margin-right: 6px;
+}
+
+.comparison-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.recommendation-ranking {
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.recommendation-ranking span {
+  border: 2px solid var(--color-border-primary);
+  background: var(--color-bg);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.guide-insight {
+  color: var(--color-text-secondary);
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-page-neo {
+    padding: var(--spacing-lg);
+    padding-top: calc(4rem + var(--spacing-lg));
+  }
+
+  .comparison-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .comparison-page-neo {
+    padding: var(--spacing-md);
+    padding-top: calc(4rem + var(--spacing-md));
+  }
+
+  .comparison-add-section,
+  .comparison-table-container,
+  .comparison-recommendation-box,
+  .comparison-guide-section {
+    padding: var(--spacing-md);
+  }
+}

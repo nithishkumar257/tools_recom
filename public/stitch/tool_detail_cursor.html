@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI BRUTAL - Cursor Tool Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#006513",
+              "primary": "#9cff93",
+              "tertiary-container": "#00fc40",
+              "surface-container": "#191919",
+              "error-container": "#b92902",
+              "on-primary": "#006413",
+              "surface-container-lowest": "#000000",
+              "secondary-fixed": "#e2e2e2",
+              "tertiary-dim": "#00ec3b",
+              "on-background": "#ffffff",
+              "outline-variant": "#484848",
+              "on-surface": "#ffffff",
+              "on-error-container": "#ffd2c8",
+              "on-secondary": "#505252",
+              "secondary-dim": "#d4d4d4",
+              "inverse-primary": "#006f16",
+              "primary-fixed": "#00fc40",
+              "surface-dim": "#0e0e0e",
+              "surface-container-highest": "#262626",
+              "on-primary-container": "#005a10",
+              "secondary-container": "#454747",
+              "on-error": "#450900",
+              "on-surface-variant": "#ababab",
+              "on-secondary-container": "#d0d0d0",
+              "surface": "#0e0e0e",
+              "inverse-surface": "#f9f9f9",
+              "secondary-fixed-dim": "#d4d4d4",
+              "surface-tint": "#9cff93",
+              "surface-bright": "#2c2c2c",
+              "on-tertiary-fixed-variant": "#006513",
+              "on-secondary-fixed": "#3e4040",
+              "error-dim": "#d53d18",
+              "background": "#0e0e0e",
+              "surface-container-low": "#131313",
+              "outline": "#757575",
+              "primary-container": "#00fc40",
+              "on-tertiary": "#006413",
+              "primary-fixed-dim": "#00ec3b",
+              "tertiary-fixed-dim": "#00ec3b",
+              "inverse-on-surface": "#555555",
+              "on-tertiary-container": "#005a10",
+              "tertiary": "#9cff93",
+              "primary-dim": "#00ec3b",
+              "on-primary-fixed": "#00440a",
+              "error": "#ff7351",
+              "secondary": "#e2e2e2",
+              "on-tertiary-fixed": "#00440a",
+              "surface-variant": "#262626",
+              "surface-container-high": "#1f1f1f",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "tertiary-fixed": "#00fc40"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #484848; }
+        .glitch-hover:hover {
+            box-shadow: 4px 4px 0px 0px #00fc40;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-4 h-16 w-full bg-[#0e0e0e] sticky top-0 z-50 bg-[#1a1a1a] shadow-none">
+<div class="flex items-center gap-4">
+<button class="transition-none active:translate-y-1 text-white">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="terminal">terminal</span>
+<h1 class="font-['Space_Grotesk'] font-black uppercase italic tracking-tighter text-xl text-[#9cff93]">AI BRUTAL</h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 pt-8 pb-32">
+<!-- Tool Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-0 mb-12">
+<div class="md:col-span-8 bg-surface-container-low p-8 border-l-4 border-primary">
+<div class="flex items-start gap-6 mb-6">
+<div class="w-20 h-20 bg-surface-container-lowest flex items-center justify-center border-2 border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="code_blocks" style="font-variation-settings: 'FILL' 1;">code_blocks</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<span class="bg-secondary-container text-white px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase">Development</span>
+<div class="w-2 h-2 bg-primary shadow-[0_0_8px_#00fc40]"></div>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Live System</span>
+</div>
+<h2 class="font-headline text-6xl font-black tracking-tighter uppercase leading-none mb-2">Cursor</h2>
+<p class="text-on-surface-variant text-sm font-medium tracking-tight">The AI-first Code Editor for massive productivity gains.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-2 border-outline-variant">
+<p class="font-body text-lg leading-relaxed text-on-surface">
+                        Built on top of VS Code, Cursor is an AI-native code editor designed to help you write code faster. It integrates large language models directly into the IDE environment, enabling advanced features like codebase-wide indexing and smart refactoring.
+                    </p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-highest p-8 flex flex-col justify-center items-center text-center">
+<span class="font-headline text-sm font-bold tracking-widest uppercase mb-4 text-on-surface-variant">Core Score</span>
+<div class="relative flex items-center justify-center">
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-surface-container-low" cx="64" cy="64" fill="transparent" r="60" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="60" stroke="currentColor" stroke-dasharray="376.99" stroke-dashoffset="15.08" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline text-4xl font-black text-white">96</span>
+</div>
+<p class="mt-6 text-[10px] font-bold tracking-[0.2em] uppercase text-primary">Industrial Grade Utility</p>
+</div>
+</section>
+<!-- Metrics Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div class="bg-surface-container-low p-6 transition-none hover:bg-surface-container-highest group">
+<h4 class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-2">Performance</h4>
+<div class="flex items-end gap-2">
+<span class="font-headline text-3xl font-black">98</span>
+<div class="h-1 flex-1 bg-surface-container-lowest mb-2 overflow-hidden">
+<div class="h-full bg-primary w-[98%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 transition-none hover:bg-surface-container-highest group">
+<h4 class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-2">Value</h4>
+<div class="flex items-end gap-2">
+<span class="font-headline text-3xl font-black">90</span>
+<div class="h-1 flex-1 bg-surface-container-lowest mb-2 overflow-hidden">
+<div class="h-full bg-primary w-[90%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 transition-none hover:bg-surface-container-highest group">
+<h4 class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-2">Popularity</h4>
+<div class="flex items-end gap-2">
+<span class="font-headline text-3xl font-black">99</span>
+<div class="h-1 flex-1 bg-surface-container-lowest mb-2 overflow-hidden">
+<div class="h-full bg-primary w-[99%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 transition-none hover:bg-surface-container-highest group">
+<h4 class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-2">Innovation</h4>
+<div class="flex items-end gap-2">
+<span class="font-headline text-3xl font-black">95</span>
+<div class="h-1 flex-1 bg-surface-container-lowest mb-2 overflow-hidden">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Left: Description & Pros/Cons -->
+<div class="md:col-span-8 space-y-8">
+<div class="bg-surface-container-low p-8">
+<h3 class="font-headline text-2xl font-black uppercase tracking-tighter mb-6">Technical Capabilities</h3>
+<div class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+<p>Cursor enables you to interact with your codebase using natural language. It indexes your entire repository, allowing the AI to understand relationships between files, suggest complex refactors, and predict your next move with "Cursor Tab" (Copilot++).</p>
+<p>Unlike standard extensions, Cursor is a fork of VS Code, meaning the integration is deeper and more performant. It supports "Composer" mode for multi-file edits and provides one-click terminal commands.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t-4 border-surface-container-highest">
+<div class="bg-surface-container-lowest p-8 border-r border-outline-variant/15">
+<h4 class="text-primary font-headline font-bold uppercase tracking-widest text-xs mb-6">Strengths (+)</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Deep codebase understanding with full indexing.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Native VS Code extension support.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Unparalleled speed in "Cursor Tab" completions.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-8">
+<h4 class="text-error font-headline font-bold uppercase tracking-widest text-xs mb-6">Limitations (-)</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-sm mt-1" data-icon="cancel">cancel</span>
+<span class="text-sm font-medium">Proprietary software (not fully open source).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-sm mt-1" data-icon="cancel">cancel</span>
+<span class="text-sm font-medium">Requires cloud connection for best features.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Right: Pricing & CTA -->
+<div class="md:col-span-4 space-y-8">
+<div class="bg-surface-container-highest p-8">
+<h3 class="font-headline text-xl font-black uppercase tracking-tighter mb-6">Access Tiers</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+<span class="text-sm font-bold">Hobbyist</span>
+<span class="text-sm text-primary font-black uppercase">FREE</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+<div>
+<span class="text-sm font-bold block">Pro Account</span>
+<span class="text-[10px] text-on-surface-variant uppercase">Most Popular</span>
+</div>
+<span class="text-sm font-black">$20/mo</span>
+</div>
+<div class="flex justify-between items-center pb-4">
+<span class="text-sm font-bold">Business</span>
+<span class="text-sm font-black uppercase">Custom</span>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<button class="w-full bg-primary text-on-primary font-headline font-black uppercase tracking-widest py-4 text-sm glitch-hover flex items-center justify-center gap-2">
+<span>Visit Website</span>
+<span class="material-symbols-outlined text-lg" data-icon="open_in_new">open_in_new</span>
+</button>
+<button class="w-full border-2 border-primary text-primary font-headline font-black uppercase tracking-widest py-4 text-sm flex items-center justify-center gap-2 transition-none active:translate-y-1">
+<span class="material-symbols-outlined text-lg" data-icon="bookmark">bookmark</span>
+<span>Save to Stack</span>
+</button>
+</div>
+</div>
+<!-- Ad/Promo Slab -->
+<div class="bg-primary p-6">
+<p class="font-headline text-black text-lg font-black leading-none uppercase mb-2">Build the Future</p>
+<p class="text-black text-xs font-medium opacity-80 mb-4">Master the AI stack with our curated blueprints.</p>
+<div class="h-12 bg-black w-full"></div>
+</div>
+</div>
+</div>
+<!-- Alternatives -->
+<section class="mt-16">
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter mb-8 flex items-center gap-4">
+                System Alternatives
+                <div class="h-px flex-1 bg-outline-variant/30"></div>
+</h3>
+<div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar">
+<div class="flex-none w-64 bg-surface-container-low p-6 border-t-2 border-outline-variant transition-none hover:border-primary">
+<h5 class="font-headline text-lg font-bold mb-1">VS Code + Copilot</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">The Standard</p>
+<div class="w-full h-32 bg-surface-container-lowest mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl opacity-20" data-icon="deployed_code">deployed_code</span>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                        View Node <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex-none w-64 bg-surface-container-low p-6 border-t-2 border-outline-variant transition-none hover:border-primary">
+<h5 class="font-headline text-lg font-bold mb-1">Codeium</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">Enterprise Free</p>
+<div class="w-full h-32 bg-surface-container-lowest mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl opacity-20" data-icon="cloud_sync">cloud_sync</span>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                        View Node <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex-none w-64 bg-surface-container-low p-6 border-t-2 border-outline-variant transition-none hover:border-primary">
+<h5 class="font-headline text-lg font-bold mb-1">Tabnine</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">Local Context</p>
+<div class="w-full h-32 bg-surface-container-lowest mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl opacity-20" data-icon="memory">memory</span>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                        View Node <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex-none w-64 bg-surface-container-low p-6 border-t-2 border-outline-variant transition-none hover:border-primary">
+<h5 class="font-headline text-lg font-bold mb-1">Zed</h5>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">High Perf</p>
+<div class="w-full h-32 bg-surface-container-lowest mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl opacity-20" data-icon="speed">speed</span>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                        View Node <span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-stretch bg-black border-t-4 border-[#262626] z-50">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full w-full group" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest mt-1">DISCOVER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626]" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest mt-1">STACK</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626]" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest mt-1">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626]" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest mt-1">SAVED</span>
+</a>
+</nav>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

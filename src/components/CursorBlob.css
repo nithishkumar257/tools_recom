@@ -1,0 +1,16 @@
+.cursor-blob {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  background: var(--purple);
+  border: 3px solid var(--black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform .15s ease, width .2s, height .2s, background .2s;
+}
+
+@media (max-width: 768px) {
+  .cursor-blob { display: none; }
+}

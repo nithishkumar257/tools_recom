@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI_BRUTAL - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00FF41",
+              "background": "#000000",
+              "surface": "#0A0A0A",
+              "on-surface": "#FFFFFF",
+              "outline": "#1A1A1A",
+              "primary-dim": "#00cc34"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0px",
+            },
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #000000;
+        color: white;
+      }
+      input::placeholder {
+        color: #333333;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+      }
+      /* Hide arrows in number inputs */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-black min-h-screen flex flex-col">
+<header class="fixed top-0 left-0 w-full z-50 p-6 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="terminal">terminal</span>
+<span class="font-headline font-bold text-lg tracking-tighter text-primary">AI_BRUTAL</span>
+</div>
+<div class="text-[10px] font-bold tracking-[0.3em] text-zinc-800 uppercase">SYS_LOG_v2.0.4</div>
+</header>
+<main class="flex-grow flex items-center justify-center p-6">
+<div class="w-full max-w-[360px] space-y-12">
+<header class="space-y-2">
+<h1 class="font-headline text-5xl font-bold tracking-tighter text-white uppercase leading-none">Login</h1>
+<p class="text-[10px] font-bold tracking-[0.4em] text-primary uppercase opacity-80">Authentication Required</p>
+</header>
+<form class="space-y-8">
+<div class="space-y-6">
+<div class="group space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 group-focus-within:text-primary transition-colors">Identity_String</label>
+<input class="w-full bg-transparent border-b border-outline focus:border-primary text-white py-3 px-0 font-medium transition-all outline-none text-sm placeholder:opacity-50" placeholder="USER@SYSTEM.AI" type="email"/>
+</div>
+<div class="group space-y-2">
+<div class="flex justify-between items-center">
+<label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 group-focus-within:text-primary transition-colors">Access_Cipher</label>
+<a class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors" href="#">Recovery?</a>
+</div>
+<input class="w-full bg-transparent border-b border-outline focus:border-primary text-white py-3 px-0 font-medium transition-all outline-none text-sm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-white text-black font-headline font-bold text-xs tracking-[0.2em] py-5 uppercase transition-all flex items-center justify-center gap-3 active:scale-[0.98] shadow-[0_0_20px_rgba(0,255,65,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]" type="submit">
+                    Authenticate
+                    <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="relative pt-4 pb-2 flex items-center">
+<div class="flex-grow border-t border-outline/30"></div>
+<span class="flex-shrink mx-4 text-[9px] font-bold tracking-[0.3em] text-zinc-700 uppercase">External_Link</span>
+<div class="flex-grow border-t border-outline/30"></div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 border border-outline bg-surface/50 hover:bg-surface hover:border-zinc-700 text-zinc-400 hover:text-white font-headline font-bold text-[9px] tracking-widest py-3 uppercase transition-all" type="button">
+<span class="material-symbols-outlined text-base" data-icon="google">google</span>
+                        Google
+                    </button>
+<button class="flex items-center justify-center gap-2 border border-outline bg-surface/50 hover:bg-surface hover:border-zinc-700 text-zinc-400 hover:text-white font-headline font-bold text-[9px] tracking-widest py-3 uppercase transition-all" type="button">
+<span class="material-symbols-outlined text-base" data-icon="terminal">terminal</span>
+                        GitHub
+                    </button>
+</div>
+</form>
+<div class="pt-6 text-center border-t border-outline/20">
+<p class="text-[10px] font-medium text-zinc-600 tracking-wide">
+                    New Operator? 
+                    <a class="text-primary font-bold uppercase tracking-widest ml-1 hover:text-white transition-colors" href="#">Create Account</a>
+</p>
+</div>
+</div>
+</main>
+<footer class="p-6 flex justify-between items-end opacity-10 pointer-events-none fixed bottom-0 left-0 w-full">
+<div class="text-[9px] font-bold tracking-widest uppercase vertical-rl rotate-180">
+            Node_Ref_882
+        </div>
+<div class="font-headline font-black text-7xl leading-none select-none">
+            01
+        </div>
+</footer>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

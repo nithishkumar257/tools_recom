@@ -1,0 +1,111 @@
+INSERT INTO categories (name, slug, description, sort_order)
+VALUES
+  ('Coding', 'coding', 'Code generation and code assistants', 1),
+  ('Writing', 'writing', 'Writing and general-purpose AI assistants', 2),
+  ('Design', 'design', 'Design, image, and creative AI tools', 3),
+  ('Automation', 'automation', 'Workflow and automation tools', 4)
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO tools (
+  name,
+  slug,
+  description_short,
+  website_url,
+  pricing_model,
+  platforms,
+  performance_score,
+  popularity_score,
+  value_score,
+  innovation_score,
+  api_available,
+  open_source,
+  company,
+  metadata
+)
+VALUES
+  (
+    'GitHub Copilot',
+    'github-copilot',
+    'AI pair programmer for code suggestions, chat, and debugging.',
+    'https://github.com/features/copilot',
+    'freemium',
+    ARRAY['web', 'desktop', 'api'],
+    96,
+    97,
+    90,
+    92,
+    true,
+    false,
+    'GitHub / Microsoft',
+    '{"source":"seed"}'::jsonb
+  ),
+  (
+    'Codeium',
+    'codeium',
+    'Free AI coding assistant with autocomplete across many languages.',
+    'https://codeium.com/',
+    'freemium',
+    ARRAY['web', 'desktop'],
+    82,
+    85,
+    95,
+    84,
+    true,
+    false,
+    'Exafunction',
+    '{"source":"seed"}'::jsonb
+  ),
+  (
+    'ChatGPT',
+    'chatgpt',
+    'General AI assistant for writing, planning, and coding tasks.',
+    'https://chatgpt.com/',
+    'freemium',
+    ARRAY['web', 'api', 'mobile'],
+    97,
+    98,
+    95,
+    96,
+    true,
+    false,
+    'OpenAI',
+    '{"source":"seed"}'::jsonb
+  ),
+  (
+    'n8n',
+    'n8n',
+    'Open-source workflow automation platform for integrations and orchestration.',
+    'https://n8n.io/',
+    'free',
+    ARRAY['web', 'api', 'desktop'],
+    88,
+    90,
+    97,
+    89,
+    true,
+    true,
+    'n8n',
+    '{"source":"seed"}'::jsonb
+  )
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO tool_categories (tool_id, category_id, is_primary)
+SELECT t.id, c.id, TRUE
+FROM tools t
+JOIN categories c ON c.slug = 'coding'
+WHERE t.slug IN ('github-copilot', 'codeium')
+ON CONFLICT (tool_id, category_id) DO NOTHING;
+
+INSERT INTO tool_categories (tool_id, category_id, is_primary)
+SELECT t.id, c.id, TRUE
+FROM tools t
+JOIN categories c ON c.slug = 'writing'
+WHERE t.slug = 'chatgpt'
+ON CONFLICT (tool_id, category_id) DO NOTHING;
+
+INSERT INTO tool_categories (tool_id, category_id, is_primary)
+SELECT t.id, c.id, TRUE
+FROM tools t
+JOIN categories c ON c.slug = 'automation'
+WHERE t.slug = 'n8n'
+ON CONFLICT (tool_id, category_id) DO NOTHING;

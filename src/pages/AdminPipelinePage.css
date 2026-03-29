@@ -1,0 +1,166 @@
+.admin-pipeline-page-neo {
+  min-height: calc(100vh - 64px);
+  background: #050505;
+  color: #f4f4f5;
+  padding: 1rem;
+}
+
+.admin-pipeline-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-pipeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #252525;
+  padding: 0.75rem 1rem;
+}
+
+.admin-pipeline-header h1 {
+  margin: 0;
+  color: #9cff93;
+  font-family: var(--font-display);
+}
+
+.admin-pipeline-header span {
+  color: #9cff93;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.admin-health-card,
+.admin-metrics-stack article,
+.admin-live-stream {
+  border: 2px solid #262626;
+  background: #0d0f12;
+  padding: 1rem;
+}
+
+.admin-health-card h2,
+.admin-live-stream h3 {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display);
+}
+
+.admin-health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.admin-health-grid div {
+  border: 1px solid #2f2f2f;
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.admin-health-grid small,
+.admin-metrics-stack article small {
+  color: #a1a1aa;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+.admin-health-grid strong,
+.admin-metrics-stack article strong {
+  font-size: 1.7rem;
+}
+
+.admin-metrics-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.admin-metrics-stack article.ok {
+  background: #9cff93;
+  color: #091009;
+  border-color: #9cff93;
+}
+
+.admin-metrics-stack article.warn strong,
+.admin-metrics-stack article.warn p {
+  color: #ff8a6a;
+}
+
+.admin-live-stream ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.admin-live-stream li {
+  border: 1px solid #292929;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.admin-live-stream p {
+  margin: 0.3rem 0 0;
+  color: #a1a1aa;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.admin-live-stream .status {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  border: 1px solid #313131;
+  padding: 0.35rem 0.5rem;
+}
+
+.admin-live-stream .status.running {
+  color: #9cff93;
+}
+
+.admin-live-stream .status.success {
+  color: #a3e635;
+}
+
+.admin-live-stream .status.failed {
+  color: #ff8a6a;
+}
+
+@media (max-width: 720px) {
+  .admin-health-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-pipeline-page-neo {
+    padding: 1.25rem;
+  }
+
+  .admin-pipeline-shell {
+    grid-template-columns: minmax(340px, 0.95fr) minmax(420px, 1.05fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .admin-pipeline-header,
+  .admin-health-card {
+    grid-column: 1 / -1;
+  }
+
+  .admin-live-stream {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .admin-metrics-stack {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

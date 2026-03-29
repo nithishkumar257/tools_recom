@@ -1,0 +1,299 @@
+/* ============================================================================
+   NEO NAVBAR - HEADER STYLES
+   ============================================================================ */
+
+.neo-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--color-bg-darkest);
+  border-bottom: 4px solid var(--color-surface-high);
+  font-family: var(--font-headline);
+}
+
+.neo-header-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+/* Brand */
+.neo-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.neo-brand:hover {
+  color: var(--color-primary-bright);
+}
+
+.neo-terminal-icon {
+  font-size: 1.5rem;
+}
+
+.neo-brand-text {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Navigation */
+.neo-nav {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.neo-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-fast);
+  border-bottom: 3px solid transparent;
+  height: 4rem;
+  align-items: center;
+  border-bottom: 3px solid var(--color-surface-high);
+}
+
+.neo-nav-link:hover,
+.neo-nav-link.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  background-color: var(--color-surface-high);
+}
+
+.neo-nav-link span:first-child {
+  font-size: 1rem;
+}
+
+/* Header Actions */
+.neo-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+/* Search Form */
+.neo-search-form {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  padding: 0;
+}
+
+.neo-search-form .input {
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: transparent;
+  min-width: 200px;
+}
+
+.neo-search-form .input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* ============================================================================
+   MOBILE MENU
+   ============================================================================ */
+
+.neo-mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  align-items: center;
+  justify-content: center;
+}
+
+.neo-mobile-menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all var(--transition-fast);
+  display: block;
+}
+
+.neo-mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.neo-mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.neo-mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.neo-mobile-menu {
+  background-color: var(--color-surface-lowest);
+  border-bottom: 2px solid var(--color-border-light);
+  padding: var(--spacing-lg) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  animation: slideDown var(--transition-normal);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.neo-mobile-search {
+  display: flex;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.neo-mobile-search .input {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  width: 100%;
+}
+
+.neo-mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  border-left: 4px solid transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.neo-mobile-menu-link:hover,
+.neo-mobile-menu-link.active {
+  background-color: var(--color-surface-high);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+.neo-mobile-menu-link span:first-child {
+  font-size: 1.25rem;
+  min-width: 24px;
+}
+
+.neo-mobile-menu-divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin: var(--spacing-sm) 0;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .neo-header-inner {
+    padding: 0 var(--spacing-lg);
+    height: 3.5rem;
+  }
+
+  .neo-nav {
+    display: none;
+  }
+
+  .neo-search-form {
+    display: none;
+  }
+
+  .neo-brand-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .neo-header-inner {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .neo-header-actions {
+    gap: var(--spacing-sm);
+  }
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.65rem;
+  }
+
+  .neo-brand-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.hide-mobile {
+  display: none;
+}
+
+.hide-desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .hide-mobile {
+    display: inline-flex !important;
+  }
+
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .hide-desktop {
+    display: inline-flex !important;
+  }
+}
+

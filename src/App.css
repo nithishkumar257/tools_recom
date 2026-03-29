@@ -1,0 +1,132 @@
+/* ========================================
+   APP ROOT
+   ======================================== */
+
+.app-root {
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  padding-top: 64px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 56px;
+    padding-bottom: 78px;
+  }
+}
+
+/* Grid background pattern */
+.app-root::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  z-index: 0;
+}
+
+.app-root > * {
+  position: relative;
+  z-index: 1;
+}
+
+.route-loading {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.06), rgba(109, 40, 217, 0.05), rgba(59, 130, 246, 0.06));
+  background-size: 200% 100%;
+  animation: routeLoading 0.9s linear infinite;
+}
+
+@keyframes routeLoading {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* ========================================
+   TOOLS SECTION
+   ======================================== */
+
+.tools-section {
+  padding: var(--section-pad);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--white) 100%);
+  position: relative;
+}
+
+.tools-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: var(--black);
+}
+
+.tools-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tools-subtitle {
+  margin-top: 0.8rem;
+  max-width: 60ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.tools-section-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tools-main {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.tools-sidebar {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1100px) {
+  .tools-section-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-sidebar {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}

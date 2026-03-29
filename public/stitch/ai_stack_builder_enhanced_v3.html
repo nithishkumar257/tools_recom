@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MONOLITH.AI // STACK_ARCHITECT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#e2e2e2",
+              "on-tertiary-fixed": "#00440a",
+              "error-dim": "#d53d18",
+              "on-primary-container": "#005a10",
+              "error": "#ff7351",
+              "secondary-fixed-dim": "#d4d4d4",
+              "secondary-dim": "#d4d4d4",
+              "surface-container-low": "#131313",
+              "primary-fixed-dim": "#00ec3b",
+              "on-tertiary-fixed-variant": "#006513",
+              "secondary-fixed": "#e2e2e2",
+              "on-error": "#450900",
+              "on-error-container": "#ffd2c8",
+              "primary-container": "#00fc40",
+              "outline": "#757575",
+              "tertiary-fixed": "#00fc40",
+              "on-secondary": "#505252",
+              "inverse-on-surface": "#555555",
+              "on-primary-fixed-variant": "#006513",
+              "surface-container-lowest": "#000000",
+              "surface": "#0e0e0e",
+              "surface-container": "#191919",
+              "on-background": "#ffffff",
+              "inverse-primary": "#006f16",
+              "surface-tint": "#9cff93",
+              "on-secondary-container": "#d0d0d0",
+              "on-secondary-fixed": "#3e4040",
+              "surface-container-high": "#1f1f1f",
+              "error-container": "#b92902",
+              "on-tertiary-container": "#005a10",
+              "secondary-container": "#454747",
+              "surface-bright": "#2c2c2c",
+              "on-surface": "#ffffff",
+              "background": "#0e0e0e",
+              "primary": "#9cff93",
+              "tertiary": "#9cff93",
+              "surface-variant": "#262626",
+              "on-primary-fixed": "#00440a",
+              "surface-container-highest": "#262626",
+              "tertiary-fixed-dim": "#00ec3b",
+              "on-surface-variant": "#ababab",
+              "tertiary-container": "#00fc40",
+              "on-primary": "#006413",
+              "primary-fixed": "#00fc40",
+              "tertiary-dim": "#00ec3b",
+              "primary-dim": "#00ec3b",
+              "outline-variant": "#484848",
+              "on-tertiary": "#006413",
+              "surface-dim": "#0e0e0e",
+              "inverse-surface": "#f9f9f9",
+              "on-secondary-fixed-variant": "#5a5c5c"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0e0e0e;
+        color: #ffffff;
+      }
+      .headline-font {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-black">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e] text-[#9cff93] font-['Space_Grotesk'] font-bold tracking-tighter uppercase border-b-4 border-[#262626] flex justify-between items-center h-16 px-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="text-2xl font-black text-[#9cff93] tracking-tighter">MONOLITH.AI</span>
+</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<nav class="flex h-full items-center">
+<a class="px-4 h-full flex items-center text-[#9cff93] bg-[#262626] border-b-2 border-primary" href="#">EXECUTE</a>
+<a class="px-4 h-full flex items-center text-white hover:bg-[#9cff93] hover:text-black transition-none" href="#">NETWORK</a>
+<a class="px-4 h-full flex items-center text-white hover:bg-[#9cff93] hover:text-black transition-none" href="#">ARCHIVE</a>
+<a class="px-4 h-full flex items-center text-white hover:bg-[#9cff93] hover:text-black transition-none" href="#">CONFIG</a>
+</nav>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined">sensors</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-12">
+<div class="flex items-baseline gap-4 mb-2">
+<span class="bg-primary text-black px-2 py-0.5 text-[10px] font-black headline-font tracking-widest">SYSTEM_LIVE</span>
+<h1 class="text-5xl md:text-7xl headline-font font-black tracking-tighter uppercase leading-none">Architect_Stack</h1>
+</div>
+<p class="text-on-surface-variant max-w-2xl font-medium border-l-4 border-primary pl-4">Optimization complete. Analyzing resource utilization for high-scale SaaS deployment on edge-native infrastructure.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Cost & Utilization (Large Feature) -->
+<div class="md:col-span-8 bg-surface-container-lowest p-8 border-l-4 border-primary">
+<div class="flex justify-between items-start mb-12">
+<div>
+<p class="text-primary headline-font text-xs font-bold tracking-[0.2em] mb-4 uppercase">Economic_Efficiency</p>
+<div class="flex items-baseline gap-2">
+<span class="text-7xl md:text-9xl headline-font font-black tracking-tighter">$0</span>
+<span class="text-2xl headline-font font-bold text-on-surface-variant">/MO</span>
+</div>
+<p class="text-primary-container headline-font font-bold text-sm tracking-widest uppercase">Recurring Monthly Cost</p>
+</div>
+<div class="text-right">
+<div class="inline-block p-4 bg-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between headline-font text-[10px] font-bold tracking-widest mb-2 uppercase">
+<span>Compute Load</span>
+<span class="text-primary">0.04% Utilization</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest">
+<div class="h-full bg-primary w-[4%] shadow-[0_0_15px_rgba(156,255,147,0.5)]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container p-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">Throughput</p>
+<p class="text-xl font-bold headline-font">480k <span class="text-xs text-primary">req/s</span></p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">Latency</p>
+<p class="text-xl font-bold headline-font">12 <span class="text-xs text-primary">ms</span></p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">Uptime</p>
+<p class="text-xl font-bold headline-font">99.99<span class="text-xs text-primary">%</span></p>
+</div>
+<div class="bg-surface-container p-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">Scale</p>
+<p class="text-xl font-bold headline-font">∞ <span class="text-xs text-primary">nodes</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stack Components (Sidebar Column) -->
+<div class="md:col-span-4 space-y-6">
+<!-- Stack Item: Next.js -->
+<div class="bg-surface-container-highest p-6 flex flex-col justify-between min-h-[160px] relative group overflow-hidden hover:bg-surface-bright transition-colors cursor-pointer">
+<div class="z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs headline-font font-bold tracking-widest uppercase bg-white text-black px-2 py-1">Framework</span>
+<span class="material-symbols-outlined text-white">deployed_code</span>
+</div>
+<h3 class="text-3xl headline-font font-black tracking-tighter uppercase italic">Next.js</h3>
+</div>
+<div class="z-10 flex gap-2">
+<span class="text-[9px] border border-outline-variant px-2 py-0.5 headline-font uppercase text-on-surface-variant">App Router</span>
+<span class="text-[9px] border border-outline-variant px-2 py-0.5 headline-font uppercase text-on-surface-variant">RSC</span>
+</div>
+<div class="absolute bottom-0 right-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] translate-x-1/4 translate-y-1/4">dynamic_form</span>
+</div>
+</div>
+<!-- Stack Item: Vercel -->
+<div class="bg-surface-container-highest p-6 flex flex-col justify-between min-h-[160px] relative group overflow-hidden hover:bg-surface-bright transition-colors cursor-pointer">
+<div class="z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs headline-font font-bold tracking-widest uppercase bg-white text-black px-2 py-1">Deployment</span>
+<span class="material-symbols-outlined text-white">cloud_upload</span>
+</div>
+<h3 class="text-3xl headline-font font-black tracking-tighter uppercase italic">Vercel</h3>
+</div>
+<div class="z-10 flex gap-2">
+<span class="text-[9px] border border-outline-variant px-2 py-0.5 headline-font uppercase text-on-surface-variant">Edge Runtime</span>
+<span class="text-[9px] border border-outline-variant px-2 py-0.5 headline-font uppercase text-on-surface-variant">CI/CD</span>
+</div>
+</div>
+</div>
+<!-- Deep Tech Row -->
+<!-- Claude AI -->
+<div class="md:col-span-6 bg-surface-container-lowest border-4 border-[#262626] p-8 relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<p class="text-primary headline-font text-[10px] font-black tracking-[0.3em] uppercase">Intelligence_Core</p>
+<h3 class="text-4xl headline-font font-black tracking-tighter uppercase">Claude 3.5</h3>
+</div>
+<div class="bg-primary-container text-black px-3 py-1 headline-font font-black text-xs uppercase tracking-tighter">Backend AI</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Advanced reasoning engine for complex SaaS logic. Optimized for long-context architectural tasks and high-precision code generation.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-black px-6 py-2 headline-font uppercase text-sm tracking-widest hover:bg-primary-dim active:translate-y-1 transition-all">Configure API</button>
+<button class="border-2 border-primary text-primary font-black px-6 py-2 headline-font uppercase text-sm tracking-widest hover:bg-primary hover:text-black transition-all">View Logs</button>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+</div>
+<!-- Postgres -->
+<div class="md:col-span-6 bg-surface-container-lowest border-4 border-[#262626] p-8 relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<p class="text-primary headline-font text-[10px] font-black tracking-[0.3em] uppercase">Persistence_Layer</p>
+<h3 class="text-4xl headline-font font-black tracking-tighter uppercase">Postgres</h3>
+</div>
+<div class="bg-secondary-container text-white px-3 py-1 headline-font font-black text-xs uppercase tracking-tighter border border-outline">Local Fallback</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Distributed relational database with vector extensions. Local-first synchronization ensures high availability even during network disruptions.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="border-l-2 border-outline-variant pl-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">Storage</p>
+<p class="text-xl font-bold headline-font">256 <span class="text-xs text-primary">GB</span></p>
+</div>
+<div class="border-l-2 border-outline-variant pl-4">
+<p class="text-[10px] text-on-surface-variant headline-font uppercase">IOPS</p>
+<p class="text-xl font-bold headline-font">15k <span class="text-xs text-primary">MAX</span></p>
+</div>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">database</span>
+</div>
+</div>
+<!-- Status Beacon Component (Full Width Grid Bottom) -->
+<div class="md:col-span-12 bg-surface-container p-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary shadow-[0_0_8px_#00fc40]"></div>
+<span class="headline-font text-[10px] font-bold tracking-widest uppercase">System Operational</span>
+</div>
+<div class="hidden md:block w-px h-8 bg-outline-variant"></div>
+<div class="hidden md:flex gap-4">
+<span class="headline-font text-[10px] text-on-surface-variant uppercase">Architecture ID: <span class="text-white">MNLTH-X92-2024</span></span>
+<span class="headline-font text-[10px] text-on-surface-variant uppercase">Kernel: <span class="text-white">v6.4.1-STABLE</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="headline-font text-[10px] font-black uppercase tracking-widest">Live Monitor</span>
+<span class="material-symbols-outlined text-sm">charging_station</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 w-full z-50 bg-[#000000] border-t-4 border-[#262626] flex justify-around items-center h-20">
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full w-full active:scale-95 transition-none" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-black tracking-widest uppercase">EXECUTE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] active:scale-95 transition-none" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-black tracking-widest uppercase">NETWORK</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] active:scale-95 transition-none" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-black tracking-widest uppercase">ARCHIVE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] active:scale-95 transition-none" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-black tracking-widest uppercase">CONFIG</span>
+</a>
+</footer>
+<!-- FAB (Contextual for architecting) -->
+<div class="fixed bottom-24 right-6 md:bottom-12 md:right-12 z-40">
+<button class="w-16 h-16 bg-primary text-black flex items-center justify-center shadow-[4px_4px_0px_0px_#000000] border-2 border-black active:translate-y-1 active:translate-x-1 transition-all">
+<span class="material-symbols-outlined text-3xl font-bold">rocket_launch</span>
+</button>
+</div>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

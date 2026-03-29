@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI BRUTAL - Stack Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#1f1f1f",
+              "on-tertiary-container": "#005a10",
+              "error-container": "#b92902",
+              "on-primary-fixed-variant": "#006513",
+              "surface": "#0e0e0e",
+              "secondary-fixed": "#e2e2e2",
+              "primary-container": "#00fc40",
+              "inverse-primary": "#006f16",
+              "secondary-dim": "#d4d4d4",
+              "on-surface": "#ffffff",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "surface-bright": "#2c2c2c",
+              "primary-fixed-dim": "#00ec3b",
+              "inverse-on-surface": "#555555",
+              "on-primary-fixed": "#00440a",
+              "on-tertiary-fixed": "#00440a",
+              "outline-variant": "#484848",
+              "primary-dim": "#00ec3b",
+              "surface-variant": "#262626",
+              "on-tertiary-fixed-variant": "#006513",
+              "surface-dim": "#0e0e0e",
+              "on-surface-variant": "#ababab",
+              "on-primary": "#006413",
+              "on-primary-container": "#005a10",
+              "primary": "#9cff93",
+              "secondary-fixed-dim": "#d4d4d4",
+              "secondary-container": "#454747",
+              "on-secondary": "#505252",
+              "tertiary-container": "#00fc40",
+              "on-tertiary": "#006413",
+              "tertiary-fixed-dim": "#00ec3b",
+              "tertiary-dim": "#00ec3b",
+              "inverse-surface": "#f9f9f9",
+              "secondary": "#e2e2e2",
+              "primary-fixed": "#00fc40",
+              "outline": "#757575",
+              "surface-container": "#191919",
+              "surface-container-low": "#131313",
+              "background": "#0e0e0e",
+              "on-error-container": "#ffd2c8",
+              "surface-container-lowest": "#000000",
+              "surface-container-highest": "#262626",
+              "tertiary": "#9cff93",
+              "surface-tint": "#9cff93",
+              "tertiary-fixed": "#00fc40",
+              "error-dim": "#d53d18",
+              "error": "#ff7351",
+              "on-error": "#450900",
+              "on-secondary-container": "#d0d0d0",
+              "on-background": "#ffffff",
+              "on-secondary-fixed": "#3e4040"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Pulse for the Status Beacon */
+        .status-pulse {
+            box-shadow: 0 0 0 0 rgba(156, 255, 147, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(156, 255, 147, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(156, 255, 147, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(156, 255, 147, 0); }
+        }
+        /* Grid Texture */
+        .bg-grid {
+            background-image: radial-gradient(#262626 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-4 h-16 w-full bg-[#0e0e0e] sticky top-0 z-50 shadow-[0_4px_0_0_#000000]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#9cff93]" data-icon="terminal">terminal</span>
+<h1 class="text-xl font-black text-[#9cff93] italic tracking-tighter font-['Space_Grotesk'] uppercase">AI BRUTAL</h1>
+</div>
+<div class="flex items-center gap-6 hidden md:flex">
+<nav class="flex gap-8 font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm">
+<a class="text-white hover:bg-[#9cff93] hover:text-black px-2 py-1 transition-none" href="#">DISCOVER</a>
+<a class="text-[#9cff93] hover:bg-[#9cff93] hover:text-black px-2 py-1 transition-none" href="#">STACK</a>
+<a class="text-white hover:bg-[#9cff93] hover:text-black px-2 py-1 transition-none" href="#">SEARCH</a>
+<a class="text-white hover:bg-[#9cff93] hover:text-black px-2 py-1 transition-none" href="#">SAVED</a>
+</nav>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest border-2 border-primary flex items-center justify-center overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="minimalist user avatar icon with neon green accents on a dark geometric background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqZRXg5tVgaMMIygZ_oMYqfhuKPAKm0BWeDHZLYf7VWBV9d1yxyAyrqnWBmWQYyTDEzog_wB7S9zxH5u7qWZBINdGUcU6mOwk_eE_OswCxD0Xg6Ed82TO7p85ZVuUPpfM0rPsNGd74G8zMfnbT95BUCKXmxsns1MVfEKVMck9Jo9obG60x9w689NAwBs8CfYPRr0sfH-hHNZJAoi1-2XJPY9_2JQzyMUXX5WgsCBPY0Q1WIZ1v9etTLP3S-56rDExXj_qYiz_OCFs"/>
+</div>
+</header>
+<main class="min-h-[calc(100vh-144px)] bg-grid flex flex-col items-center justify-start p-6 md:p-12">
+<!-- Hero Section -->
+<section class="w-full max-w-5xl mb-12">
+<h2 class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-4">
+                BUILD YOUR <span class="text-primary italic">STACK</span>
+</h2>
+<p class="font-headline text-on-surface-variant text-lg md:text-xl max-w-2xl border-l-4 border-primary pl-4">
+                PASTE YOUR REQUIREMENTS OR USE VOICE COMMANDS TO ARCHITECT INDUSTRIAL-GRADE AI WORKFLOWS.
+            </p>
+</section>
+<!-- Main Interaction Area: Bento Style -->
+<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-0 border-4 border-surface-container-highest bg-surface-container-lowest shadow-[8px_8px_0_0_#000000]">
+<!-- Text Input Zone -->
+<div class="md:col-span-8 p-8 border-b-4 md:border-b-0 md:border-r-4 border-surface-container-highest">
+<div class="flex items-center justify-between mb-6">
+<label class="font-headline font-bold text-sm tracking-widest text-primary uppercase">Natural Language Input</label>
+<span class="text-[10px] font-mono text-on-surface-variant bg-surface-container-highest px-2 py-0.5">UTF-8 // RAW_INPUT</span>
+</div>
+<textarea class="w-full h-64 md:h-96 bg-surface-container-lowest text-on-surface font-mono text-lg p-0 border-none focus:ring-0 placeholder:text-surface-container-highest resize-none" placeholder="DEFINE SYSTEM PARAMETERS, INTEGRATIONS, AND DEPLOYMENT TARGETS..."></textarea>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary font-headline font-black px-10 py-4 uppercase tracking-tighter hover:bg-primary-fixed-dim transition-none active:translate-y-1 shadow-[4px_4px_0_0_#000000]">
+                        COMPILE STACK
+                    </button>
+</div>
+</div>
+<!-- Voice & Status Zone -->
+<div class="md:col-span-4 bg-surface-container-low flex flex-col">
+<!-- Voice Activation -->
+<div class="flex-1 flex flex-col items-center justify-center p-12 border-b-4 border-surface-container-highest group">
+<button class="w-32 h-32 bg-surface-container-lowest border-4 border-primary flex items-center justify-center transition-none group-active:translate-y-2 shadow-[8px_8px_0_0_#000000] group-active:shadow-none mb-8">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<p class="font-headline font-black text-2xl uppercase tracking-tighter text-center">VOICE_INPUT_ACTIVE</p>
+</div>
+<!-- Live Status -->
+<div class="p-8 bg-black">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-4 h-4 bg-primary status-pulse"></div>
+<span class="font-headline font-bold text-xl uppercase tracking-tight text-primary">Listening...</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-[10px] font-mono border-b border-outline-variant pb-1">
+<span class="text-on-surface-variant">BITRATE</span>
+<span class="text-primary">1411 KBPS</span>
+</div>
+<div class="flex justify-between items-center text-[10px] font-mono border-b border-outline-variant pb-1">
+<span class="text-on-surface-variant">LATENCY</span>
+<span class="text-primary">12 MS</span>
+</div>
+<div class="flex justify-between items-center text-[10px] font-mono">
+<span class="text-on-surface-variant">ENGINE</span>
+<span class="text-primary">NEURAL_V4</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footnote Info -->
+<div class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-6 bg-surface-container-highest border-l-4 border-primary">
+<h4 class="font-headline font-black text-sm uppercase mb-2">Security Hash</h4>
+<p class="font-mono text-[10px] text-on-surface-variant break-all">AIB-STCK-992-X1-8827-00-FF-A1</p>
+</div>
+<div class="p-6 bg-surface-container-highest border-l-4 border-primary">
+<h4 class="font-headline font-black text-sm uppercase mb-2">Model Version</h4>
+<p class="font-mono text-[10px] text-on-surface-variant uppercase">Industrial Brutalist AI v2.4.0-Stable</p>
+</div>
+<div class="p-6 bg-surface-container-highest border-l-4 border-primary">
+<h4 class="font-headline font-black text-sm uppercase mb-2">System Status</h4>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary"></span>
+<p class="font-mono text-[10px] text-primary uppercase">All modules operational</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full h-20 flex justify-around items-stretch bg-black border-t-4 border-[#262626] z-50">
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest">DISCOVER</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#9cff93] text-black h-full w-full transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="layers" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest">STACK</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white h-full w-full hover:bg-[#262626] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bookmark">bookmark</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] tracking-widest">SAVED</span>
+</a>
+</footer>
+<!-- FAB -->
+<button class="fixed right-6 bottom-24 md:bottom-8 w-16 h-16 bg-primary text-black flex items-center justify-center shadow-[4px_4px_0_0_#000000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-none z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<script src="/stitch/runtime-router.js"></script>`n</body></html>

@@ -1,0 +1,161 @@
+.system-analytics-page-neo {
+  min-height: calc(100vh - 64px);
+  background: #050505;
+  color: #f4f4f5;
+  padding: 1rem;
+}
+
+.system-analytics-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.analytics-header-neo {
+  border: 2px solid #222;
+  background: #090a0b;
+  padding: 0.9rem;
+}
+
+.analytics-header-neo p {
+  margin: 0;
+  color: #9cff93;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+.analytics-header-neo h1 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 0.9;
+}
+
+.analytics-hero-card,
+.analytics-latency-card,
+.analytics-logs-card {
+  border: 2px solid #262626;
+  background: #0d0f12;
+  padding: 0.9rem;
+}
+
+.analytics-hero-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.75rem;
+}
+
+.analytics-hero-card small {
+  color: #9cff93;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+}
+
+.analytics-hero-card strong {
+  display: block;
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+.analytics-hero-card span {
+  color: #9cff93;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.analytics-hero-card button {
+  background: #9cff93;
+  color: #090909;
+  border: 2px solid #9cff93;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.analytics-latency-card h2,
+.analytics-logs-card h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+}
+
+.analytics-latency-card p {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 0.5rem;
+  margin: 0.45rem 0 0;
+}
+
+.analytics-latency-card span {
+  color: #9ca3af;
+  font-family: var(--font-mono);
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+}
+
+.analytics-latency-card strong {
+  color: #9cff93;
+}
+
+.analytics-logs-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.analytics-logs-card li {
+  border-left: 3px solid #9cff93;
+  background: #090b0d;
+  padding: 0.5rem;
+  color: #d1d5db;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 640px) {
+  .analytics-hero-card {
+    flex-wrap: wrap;
+  }
+
+  .analytics-hero-card button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 980px) {
+  .system-analytics-page-neo {
+    padding: 1.25rem;
+  }
+
+  .system-analytics-shell {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-areas:
+      'header header header header header header header hero hero hero hero hero'
+      'latency latency latency latency latency logs logs logs logs logs logs logs';
+    gap: 1rem;
+  }
+
+  .analytics-header-neo {
+    grid-area: header;
+    min-height: 100%;
+  }
+
+  .analytics-hero-card {
+    grid-area: hero;
+    min-height: 100%;
+  }
+
+  .analytics-latency-card {
+    grid-area: latency;
+  }
+
+  .analytics-logs-card {
+    grid-area: logs;
+  }
+}
